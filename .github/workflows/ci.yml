@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
+          # point cache to the client lockfile since the project lives under `client/`
+          cache-dependency-path: client/package-lock.json
 
       - name: Install dependencies (client)
         run: npm ci
