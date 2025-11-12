@@ -1,0 +1,741 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.subtitle {
+  color: #a79c83;
+}
+
+/* TOPBANNER====================== */
+.banner {
+  background-color: #c2b697;
+  color: #053661;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: padding 0.3s ease, font-size 0.3s ease;
+}
+.banner-icon {
+  color: #be7413;
+}
+.banner-icon:hover {
+  color: #053661;
+}
+.phone-icon {
+  animation: ring 12s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes ring {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  10% {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  20% {
+    transform: scale(1) rotate(-10deg);
+  }
+
+  30% {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  40% {
+    transform: scale(1) rotate(-10deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  60% {
+    transform: scale(1) rotate(-10deg);
+  }
+
+  70% {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  80% {
+    transform: scale(1) rotate(-10deg);
+  }
+
+  90% {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* NAVBAR====================== */
+.nav {
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  width: 100%;
+  z-index: 50;
+  transition: box-shadow 0.3s ease;
+}
+
+.nav-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  animation: nav-sticky-slide 0.35s ease forwards;
+  box-shadow: 0 8px 18px rgba(2, 24, 43, 0.18);
+}
+
+.nav-sticky .banner {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.nav-sticky .slide-in {
+  animation: none;
+}
+
+.nav-sticky .navbar {
+  background-color: #02182b;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  transition: padding 0.3s ease;
+}
+
+.nav .logo-image {
+  max-width: 70px;
+}
+
+.nav .logo-text {
+  max-width: 200px;
+  margin-left: -1.5rem;
+}
+
+.nav .slide-in {
+  background-color: #02182b;
+  padding-top: 0;
+  padding-top: 0;
+  animation: slide-in 0.8s ease-out;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-70%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-sticky-slide {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER====================== */
+footer {
+  background-color: #02182b;
+  color: #e7eaef;
+  font-size: 0.8rem;
+}
+footer .logo-text {
+  max-width: 150px;
+}
+
+footer .logo-image {
+  max-width: 50px;
+}
+
+footer .logo-text {
+  max-width: 150px;
+  margin-left: -1.5rem;
+}
+footer .content {
+  color: #c2b697;
+}
+.contact-icon {
+  color: #be7413;
+  font-size: large;
+}
+.contact-icon:hover {
+  color: #c2b697;
+}
+footer h6 {
+  color: #c2b697;
+}
+.footer-heading {
+  letter-spacing: 0.08rem;
+  font-weight: 600;
+}
+
+.footer-hours p {
+  color: #e7eaef;
+  font-size: 0.85rem;
+}
+
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+  color: #e7eaef;
+}
+
+.footer-contact-list .contact-icon {
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+.footer-contact-list a {
+  color: #e7eaef;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-list a:hover,
+.footer-link:hover {
+  color: #c2b697;
+}
+
+.footer-meta {
+  border-top: 1px solid rgba(194, 182, 151, 0.35);
+  border-bottom: 1px solid rgba(194, 182, 151, 0.35);
+}
+
+.footer-link {
+  color: #e7eaef;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+/* .scroll-to-top {
+  color: #e7eaef;
+  background-color: transparent;
+} */
+
+.copyright {
+  font-size: 0.7rem;
+  color: rgb(222, 217, 217);
+}
+
+.map-embed {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+}
+
+.map-embed-footer iframe {
+  height: 240px;
+}
+
+/* ACASA====================== */
+
+.home-page {
+  font-size: 0.9rem;
+}
+.hero-section {
+  background-image: url("/public/assets/hero.webp");
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-container {
+  position: relative;
+  z-index: 1;
+  margin-top: 8rem;
+  margin-left: 3rem;
+}
+
+.text-1,
+.text-2 {
+  color: #fff;
+  font-family: "Marmelad", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.text-2 {
+  line-height: 2rem;
+}
+
+.text-2 span {
+  color: rgb(232, 189, 134);
+  font-size: 1.3rem;
+}
+
+.text-3 {
+  color: #ebe2d6ff;
+  font-size: 0.9rem;
+  padding-top: 3rem;
+  line-height: 1.8rem;
+  width: 60%;
+}
+
+.text-3 span {
+  font-size: 0.7rem;
+}
+
+.slide {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideLeft 1s forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.horizontal-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+#horizontal1 {
+  background-color: #042b4e;
+  color: #ebe2d6ff;
+}
+
+#horizontal1:hover {
+  background-color: #c2b697;
+  color: #042b4e;
+}
+#small {
+  background-color: #042b4e;
+  color: #ebe2d6ff;
+}
+
+#small:hover {
+  background-color: #c2b697;
+  color: #042b4e;
+}
+
+.horizontal-btn .btn {
+  background-color: #c2b697;
+  color: #053661;
+}
+
+.horizontal-btn .btn:hover {
+  background-color: #042b4e;
+  color: #ebe2d6ff;
+}
+
+.mobile-btn .btn {
+  background-color: #c2b697;
+  color: #053661;
+}
+
+.mobile-btn .btn:hover {
+  background-color: #042b4e;
+  color: #ebe2d6ff;
+}
+
+/* end buttons===== */
+
+.text-separator {
+  border-left: 2px solid #a07613;
+  padding-left: 2rem;
+  text-indent: 1rem;
+}
+
+/* intro */
+
+.guide-text {
+  color: #a07613;
+  font-family: "Montserrat", sans-serif;
+  border-left: 2px solid #a07613;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+/* services */
+
+.services-section {
+  background-image: url("/public/assets/column-services.webp");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+}
+
+.services-section img {
+  object-fit: cover;
+  width: 150px;
+}
+
+.services-overlay {
+  background-color: rgba(1, 13, 37, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.services-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.services-content p {
+  text-indent: 1rem;
+}
+
+.color {
+  color: #c2b697;
+}
+
+.services-section .btn {
+  background-color: #c2b697;
+
+  color: #000;
+}
+
+.services-section .btn:hover {
+  background-color: #2d6da5;
+  color: #fff;
+}
+
+/* recommendation */
+.recommendation {
+  background-color: #e7eaef;
+}
+
+.my-list {
+  list-style-type: none;
+}
+
+.my-list li {
+  position: relative;
+  margin-left: 25px;
+}
+
+.my-list li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #c2b697;
+  border-radius: 2px;
+}
+
+/* PEOPLE / OUR TEAM ====================== */
+.team-card {
+  background: #0b233c;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-image-wrapper {
+  background: #061524;
+}
+
+.team-card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.team-card-body .subtitle {
+  color: #c2b697;
+}
+
+.team-member-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.team-member-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.team-member-image-wrapper {
+  background: linear-gradient(135deg, #02182b 0%, #0b233c 100%);
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member-body .subtitle {
+  color: #c2b697;
+  font-size: 1.05rem;
+  letter-spacing: 0.03rem;
+}
+
+.team-member-bio {
+  line-height: 1.7;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .team-member-image-wrapper {
+    min-height: 280px;
+  }
+}
+
+.square {
+  background-color: #be7413;
+  color: #fff;
+  height: 8rem;
+  margin-top: -3rem;
+}
+.square:hover {
+  background-color: #042b4e;
+}
+/* AVOCATURA====================== */
+.avocatura {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  overflow: hidden;
+}
+
+.avocatura .card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(5, 1, 25, 0.8);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-weight: lighter;
+}
+
+.avocatura .card-body {
+  background-color: #072e53;
+  border-bottom: 7px solid #c2b697;
+}
+
+.avocatura .card-img-top {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.law-icon {
+  color: #c2b697;
+}
+
+.civil {
+  background-image: url("/public/assets/civil-law.webp");
+}
+
+.criminal {
+  background-image: url("/public/assets/criminal-law.webp");
+}
+
+.enforcement {
+  background-image: url("/public/assets/enforcement.webp");
+}
+
+.family {
+  background-image: url("/public/assets/family-law.webp");
+}
+
+.labor {
+  background-image: url("/public/assets/labor-law.webp");
+}
+
+.business {
+  background-image: url("/public/assets/business-law.webp");
+}
+
+.insolvency {
+  background-image: url("/public/assets/insolvency.webp");
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.more-services {
+  text-indent: 1rem;
+  font-size: 0.8rem;
+}
+
+/* INSOLVENTA====================== */
+.insolventa-page {
+  /* background-color: #eae8e3; */
+  font-size: 0.9rem;
+}
+
+.card-img-top2 {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+.insolventa-page .card-text {
+  background-color: #072e53;
+}
+.insolventa-page .btn {
+  background-color: #c2b697;
+  display: block;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.insolventa-page .btn:hover {
+  background-color: #2d6da5;
+}
+
+/* CONTACT====================== */
+.contact-page {
+  font-size: 0.9rem;
+}
+.form-wrap {
+  position: relative;
+  background-image: url("/public/assets/column-form.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-overlay {
+  background-color: rgba(6, 23, 62, 0.8);
+  /* background-color: rgba(22, 22, 54, 0.8); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-form,
+.form-label,
+.form-control,
+.btn {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-text {
+  margin-top: 2rem;
+}
+
+.form-wrap .btn {
+  background-color: #c2b697;
+}
+
+.form-wrap .btn:hover {
+  background-color: #2d6da5;
+}
+
+.contact-page p {
+  text-indent: 1rem;
+}
+
+/* INFORMATII UTILE====================== */
+.info {
+  /* background-color: #eae8e3; */
+  font-size: 0.8rem;
+}
+
+#accordion-btn {
+  background-color: #072e53;
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: "\f057";
+  font-family: "Font Awesome 5 Free";
+  color: #c2b697;
+  background-image: none !important;
+  font-size: 25px;
+}
+
+.accordion-button.collapsed::after {
+  content: "\f058";
+  color: #c2b697;
+  font-weight: 400;
+  font-family: "Font Awesome 5 Free";
+  background-image: none !important;
+  font-size: 25px;
+}
+
+.info p {
+  text-indent: 1rem;
+}
+
+.info h5 {
+  color: #be7413;
+}
