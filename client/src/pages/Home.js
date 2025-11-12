@@ -181,11 +181,15 @@ const Home = () => {
                       </h5>
                       <div className="d-flex align-items-center">
                         <img
-                          src="/assets/corporate-advisory.webp"
-                          className="barou img-fluid mx-auto d-block rounded-2"
-                          alt="legal illustration"
-                          width="150"
-                          height="150"
+                          src="/assets/corporate-commercial-book.webp"
+                          className="barou img-fluid mx-auto d-block rounded-3"
+                          alt="Corporate and commercial law book with scales"
+                          style={{
+                            width: "min(260px, 100%)",
+                            height: "200px",
+                            objectFit: "cover",
+                            boxShadow: "0 12px 24px rgba(0,0,0,0.25)",
+                          }}
                         />
                       </div>
                       <p className="pt-4 px-2">
@@ -213,11 +217,15 @@ const Home = () => {
                       </h5>
                       <div className="d-flex align-items-center">
                         <img
-                          src="/assets/restructuring.webp"
-                          className="unpir img-fluid mx-auto d-block rounded-2"
-                          alt="restructuring illustration"
-                          width="150"
-                          height="150"
+                          src="/assets/taxation-restructuring.webp"
+                          className="unpir img-fluid mx-auto d-block rounded-3"
+                          alt="Taxation and restructuring concept"
+                          style={{
+                            width: "min(260px, 100%)",
+                            height: "200px",
+                            objectFit: "cover",
+                            boxShadow: "0 12px 24px rgba(0,0,0,0.25)",
+                          }}
                         />
                       </div>
                       <p className="pt-4 px-2">

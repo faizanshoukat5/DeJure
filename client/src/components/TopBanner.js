@@ -32,8 +32,14 @@ const TopBanner = () => {
               icon={faPhone}
               className="banner-icon phone-icon pe-2"
               size="1x"
-            />{" "}
-            +92 51 831 1961
+            />
+            <a href="tel:+923009462171" className="text-decoration-none text-dark fw-semibold">
+              ISB: +92 300-9462171
+            </a>
+            <span className="mx-2">|</span>
+            <a href="tel:+923214344392" className="text-decoration-none text-dark fw-semibold">
+              LHR: +92 321-4344392
+            </a>
           </div>
         </div>
       </div>
