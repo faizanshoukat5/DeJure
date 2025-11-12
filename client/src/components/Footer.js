@@ -36,11 +36,6 @@ const Footer = () => {
                 Islamabad and Lahore to support complex mandates for businesses,
                 investors, and public institutions.
               </p>
-              <div className="footer-hours mt-3">
-                <h6 className="footer-heading pb-1">Office Hours</h6>
-                <p className="mb-1">Monday to Friday: 9:00 AM – 6:00 PM</p>
-                <p className="mb-0">Saturday: 10:00 AM – 2:00 PM</p>
-              </div>
             </div>
             <div className="col-lg-4">
               <h6 className="footer-heading text-uppercase">Islamabad Office</h6>
@@ -119,9 +114,7 @@ const Footer = () => {
               </span>
             </div>
             <div className="col-md-6 text-center text-md-end">
-              <a href="/sitemap.xml" className="footer-link">
-                View HTML Sitemap
-              </a>
+              {/* Sitemap link intentionally removed per design request */}
             </div>
           </div>
           <div className="row g-4 pt-4">
