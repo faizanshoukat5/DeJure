@@ -5,6 +5,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [navHeight, setNavHeight] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
 
@@ -67,25 +68,26 @@ const Navbar = () => {
                 src="/assets/logo-option7-seal.svg"
                 className="img-fluid logo-image"
                 alt="De Jure Advocates & Legal Consultants logo"
-                style={{ height: '100px', width: 'auto', maxWidth: '490px' }}
+                style={{ height: isSticky ? '64px' : '100px', width: 'auto', maxWidth: '490px', transition: 'height 240ms ease' }}
                 loading="lazy"
               />
             </Link>
             {/* toggle button for mobile nav */}
             <button
-              className="navbar-toggler"
+              className={`navbar-toggler ${mobileOpen ? "open" : ""}`}
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#main-nav"
               aria-controls="main-nav"
-              aria-expanded="false"
+              aria-expanded={mobileOpen}
               aria-label="Toggle navigation"
+              onClick={() => setMobileOpen((s) => !s)}
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon" />
             </button>
             {/* navbar links  */}
             <div
-              className="collapse navbar-collapse justify-content-end align-center"
+              className={`collapse navbar-collapse justify-content-end align-center${
+                mobileOpen ? " show" : ""
+              }`}
               id="main-nav"
             >
               <ul className="navbar-nav">
@@ -118,6 +120,7 @@ const Navbar = () => {
                 <li className="nav-item mx-3 mb-2">
                   <Link
                     to="/practice-areas"
+                    onClick={() => setMobileOpen(false)}
                     style={{
                       textDecoration: "none",
                       color: practiceLinkActive ? "#c2b697" : "#fff",
@@ -155,9 +158,10 @@ const Navbar = () => {
                     Our Team
                   </NavLink>
                 </li>
-                <li className="nav-item mx-3 mb-2">
+                <li className="nav-item mx-3 mb-2 d-md-none">
                   <NavLink
                     to="/contact"
+                    onClick={() => setMobileOpen(false)}
                     style={({ isActive }) => ({
                       textDecoration: "none",
                       color: isActive ? "#c2b697" : "#fff",
@@ -167,6 +171,12 @@ const Navbar = () => {
                   >
                     Contact
                   </NavLink>
+                </li>
+                {/* CTA visible on desktop */}
+                <li className="nav-item ms-2 d-none d-md-flex align-items-center">
+                  <Link to="/contact" className="nav-cta btn btn-sm" onClick={() => setMobileOpen(false)}>
+                    Request a consultation
+                  </Link>
                 </li>
               </ul>
             </div>

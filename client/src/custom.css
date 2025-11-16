@@ -161,6 +161,83 @@
   animation: slide-in 0.8s ease-out;
 }
 
+/* Modern navbar tweaks */
+.nav {
+  transition: background-color 240ms ease, box-shadow 240ms ease, padding 240ms ease;
+}
+
+.nav.nav-sticky {
+  background-color: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.logo-image {
+  transition: height 240ms ease, transform 240ms ease;
+}
+
+.navbar-toggler {
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -6px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 6px;
+}
+
+.navbar-toggler.open .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler.open .navbar-toggler-icon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.navbar-toggler.open .navbar-toggler-icon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-cta {
+  background: linear-gradient(90deg,#be7413,#c2b697);
+  color: #02182b !important;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  box-shadow: 0 6px 18px rgba(190,116,19,0.12);
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+
 .expertise-card {
   background: rgba(2, 24, 43, 0.7);
   border-left: 3px solid #be7413;
