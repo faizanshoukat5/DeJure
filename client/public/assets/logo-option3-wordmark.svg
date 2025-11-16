@@ -1,0 +1,15 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">Clean De Jure wordmark with accent bar.</desc>
+
+  <text x="40" y="90" font-family="'Times New Roman', 'Georgia', serif" font-size="70" font-weight="600">
+    <tspan fill="#c2b697" font-style="italic" font-weight="400">De</tspan>
+    <tspan dx="10" fill="#02182b">Jure</tspan>
+  </text>
+
+  <rect x="40" y="105" width="300" height="3" fill="#c2b697" />
+
+  <text x="40" y="140" font-family="'Georgia', 'Times New Roman', serif" font-size="22" fill="#02182b" letter-spacing="1.2">
+    ADVOCATES &amp; LEGAL CONSULTANTS
+  </text>
+</svg>

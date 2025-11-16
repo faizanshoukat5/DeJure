@@ -14,10 +14,12 @@ const Home = () => {
     <>
       <div className="home-page">
         <Helmet>
-          <title>DeJure | Business Law & Consulting</title>
+          <title>
+            De Jure Advocates & Legal Consultants | Business Law & Consulting
+          </title>
           <meta
             name="description"
-            content="DeJure delivers corporate, tax, and regulatory counsel for businesses operating across Pakistan. Discover our mission, expertise, and client-first values."
+            content="De Jure Advocates & Legal Consultants delivers corporate, tax, and regulatory counsel for businesses operating across Pakistan. Discover our mission, expertise, and client-first values."
           />
         </Helmet>
         {/* HERO=========== */}
@@ -26,7 +28,9 @@ const Home = () => {
             <div className="hero-section">
               <div className="hero-overlay"></div>
               <div className="text-container d-flex flex-column justify-content-start align-items-start pt-6 slide">
-                <div className="text-1 fs-2 pb-3">DEJURE LAW & CONSULTING</div>
+                <div className="text-1 fs-2 pb-3">
+                  DE JURE ADVOCATES & LEGAL CONSULTANTS
+                </div>
                 <div className="text-2 fs-4">
                   CORPORATE LAW. TAX STRATEGY. REGULATORY INSIGHT.
                   <span className="fw-bold">
@@ -134,7 +138,8 @@ const Home = () => {
                 </h5>
 
                 <p className="text-separator fw-normal">
-                  DeJure was founded to deliver efficient, client-centric legal
+                  De Jure Advocates & Legal Consultants was founded to deliver
+                  efficient, client-centric legal
                   solutions for businesses navigating Pakistan's regulatory
                   landscape. We balance timely advice with strategic execution,
                   supporting decision-makers through complex transactions and
@@ -181,9 +186,9 @@ const Home = () => {
                       </h5>
                       <div className="d-flex align-items-center">
                         <img
-                          src="/assets/corporate-commercial-book.webp"
+                          src="/assets/business-law.jpg"
                           className="barou img-fluid mx-auto d-block rounded-3"
-                          alt="Corporate and commercial law book with scales"
+                          alt="Corporate and commercial law consultation"
                           style={{
                             width: "min(260px, 100%)",
                             height: "200px",
@@ -217,7 +222,7 @@ const Home = () => {
                       </h5>
                       <div className="d-flex align-items-center">
                         <img
-                          src="/assets/taxation-restructuring.webp"
+                          src="/assets/civil-criminal.jpg"
                           className="unpir img-fluid mx-auto d-block rounded-3"
                           alt="Taxation and restructuring concept"
                           style={{
@@ -263,7 +268,8 @@ const Home = () => {
                 <h5 className="lh-base text-center pb-4">Who we are</h5>
 
                 <p className="text-separator fw-normal">
-                  DeJure delivers legal and policy advice to businesses, NGOs,
+                  De Jure Advocates & Legal Consultants delivers legal and
+                  policy advice to businesses, NGOs,
                   regulators, and government authorities. Our lawyers combine
                   top-tier education with practical commercial insight,
                   ensuring every mandate is shaped by deep understanding of our
@@ -290,7 +296,7 @@ const Home = () => {
 
         {/*CE NE RECOMANDA========= */}
         <section className="recommendation p-3 bg-image m-3 px-0">
-          <h6 className="guide-text ">WHY DEJURE</h6>
+          <h6 className="guide-text ">WHY DE JURE ADVOCATES & LEGAL CONSULTANTS</h6>
           <div className="container d-flex flex-column justify-content-center align-items-center">
             <h5 className="h-50 lh-base text-center pb-4">Why clients choose us</h5>
           </div>

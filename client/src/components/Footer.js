@@ -20,21 +20,17 @@ const Footer = () => {
         <div className="container py-5">
           <div className="row g-4 align-items-start">
             <div className="col-lg-4 text-center text-lg-start">
-              <span className="d-inline-flex align-items-center">
-                <img
-                  src="/assets/LOGO2.png"
-                  className="img-fluid logo-image me-2"
-                  alt="balanced scales logo"
-                  width="50"
-                  height="50"
-                />
-                <span className="fw-semibold text-uppercase">DeJure</span>
-              </span>
+              <img
+                src="/assets/logo-option7-seal.svg"
+                className="img-fluid logo-image"
+                alt="De Jure Advocates & Legal Consultants logo"
+                style={{ height: '70px', width: 'auto', maxWidth: '380px', marginBottom: '1.5rem' }}
+              />
               <p className="content pt-3">
-                DeJure Law & Consulting pairs courtroom insight with strategic
-                advisory work across Pakistan. We maintain dedicated teams in
-                Islamabad and Lahore to support complex mandates for businesses,
-                investors, and public institutions.
+                De Jure Advocates & Legal Consultants pairs courtroom insight
+                with strategic advisory work across Pakistan. We maintain
+                dedicated teams in Islamabad and Lahore to support complex
+                mandates for businesses, investors, and public institutions.
               </p>
             </div>
             <div className="col-lg-4">
@@ -122,7 +118,7 @@ const Footer = () => {
               <div className="map-embed map-embed-footer shadow-sm">
                 <iframe
                   src="https://www.google.com/maps?q=House+8,+Street+38,+F-6/1,+Islamabad,+Pakistan&output=embed"
-                  title="DeJure Islamabad Office on Google Maps"
+                  title="De Jure Advocates & Legal Consultants Islamabad Office on Google Maps"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
@@ -133,7 +129,7 @@ const Footer = () => {
               <div className="map-embed map-embed-footer shadow-sm">
                 <iframe
                   src="https://www.google.com/maps?q=36-C+FCC,+Gulberg+IV,+Lahore,+Pakistan&output=embed"
-                  title="DeJure Lahore Office on Google Maps"
+                  title="De Jure Advocates & Legal Consultants Lahore Office on Google Maps"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
@@ -170,7 +166,7 @@ const Footer = () => {
             headerIcon="assets/LOGO2.png"
             headerTxtColor="white"
             headerBgColor="#02182b"
-            headerTitle="DeJure Support"
+            headerTitle="De Jure Advocates & Legal Consultants"
             headerCaption="Typically replies in minutes"
             bodyBgColor="#bbb"
             chatPersonName="Support"
@@ -191,7 +187,8 @@ const Footer = () => {
           <div className="bg-dark d-flex align-items-center justify-content-center">
             <hr></hr>
             <p className="copyright mb-0">
-              ©2025 DeJure Law & Consulting. All rights reserved.
+              ©2025 De Jure Advocates & Legal Consultants. All rights
+              reserved.
             </p>
           </div>
         </div>

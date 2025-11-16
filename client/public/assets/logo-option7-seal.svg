@@ -1,0 +1,26 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">Executive De Jure logo with monogram seal.</desc>
+
+  <!-- Circular seal -->
+  <circle cx="85" cy="85" r="65" fill="#02182b" stroke="#c2b697" stroke-width="4" />
+  <circle cx="85" cy="85" r="55" fill="none" stroke="#be7413" stroke-width="1.5" />
+  
+  <!-- Monogram "DJ" -->
+  <text x="85" y="105" text-anchor="middle" font-family="'Libre Baskerville', 'Georgia', serif" font-size="56" fill="#c2b697" font-weight="700">DJ</text>
+  
+  <!-- Main text -->
+  <text x="175" y="75" font-family="'Libre Baskerville', 'Georgia', serif" font-size="68" font-weight="700">
+    <tspan fill="#ebe2d6" font-style="italic" font-weight="400">De</tspan>
+    <tspan dx="8" fill="#c2b697">Jure</tspan>
+  </text>
+  
+  <!-- Decorative line above tagline -->
+  <line x1="175" y1="100" x2="420" y2="100" stroke="#be7413" stroke-width="1.5" opacity="0.6" />
+  
+  <!-- Tagline split into two lines for better readability -->
+  <text font-family="'Montserrat', 'Open Sans', sans-serif" font-size="17" fill="#c2b697" letter-spacing="2.3" font-weight="500">
+    <tspan x="175" y="120">ADVOCATES &amp; LEGAL</tspan>
+    <tspan x="175" y="140">CONSULTANTS</tspan>
+  </text>
+</svg>

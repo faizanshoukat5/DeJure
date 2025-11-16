@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import TopBanner from "../components/TopBanner";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [navHeight, setNavHeight] = useState(0);
+  const location = useLocation();
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const Navbar = () => {
   }, []);
 
   const navClasses = `nav${isSticky ? " nav-sticky" : ""}`;
+  const practiceLinkActive =
+    location.pathname === "/practice-areas" || location.pathname === "/core-strengths";
 
   return (
     <>
@@ -61,15 +64,12 @@ const Navbar = () => {
               className="navbar-brand d-flex align-items-center text-decoration-none text-white"
             >
               <img
-                src="/assets/LOGO2.png"
+                src="/assets/logo-option7-seal.svg"
                 className="img-fluid logo-image"
-                alt="balanced scales logo"
-                width="70"
-                height="70"
+                alt="De Jure Advocates & Legal Consultants logo"
+                style={{ height: '100px', width: 'auto', maxWidth: '490px' }}
+                loading="lazy"
               />
-              <span className="ms-2 fw-semibold text-uppercase">
-                DeJure Law & Consulting
-              </span>
             </Link>
             {/* toggle button for mobile nav */}
             <button
@@ -116,30 +116,18 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item mx-3 mb-2">
-                  <NavLink
+                  <Link
                     to="/practice-areas"
-                    style={({ isActive }) => ({
+                    style={{
                       textDecoration: "none",
-                      color: isActive ? "#c2b697" : "#fff",
-                      borderBottom: isActive ? "1px solid #c2b697" : "none",
-                      paddingBottom: isActive ? "5px" : "0",
-                    })}
+                      color: practiceLinkActive ? "#c2b697" : "#fff",
+                      borderBottom: practiceLinkActive ? "1px solid #c2b697" : "none",
+                      paddingBottom: practiceLinkActive ? "5px" : "0",
+                      fontWeight: practiceLinkActive ? 600 : 500,
+                    }}
                   >
-                    Practice Areas
-                  </NavLink>
-                </li>
-                <li className="nav-item mx-3 mb-2">
-                  <NavLink
-                    to="/core-strengths"
-                    style={({ isActive }) => ({
-                      textDecoration: "none",
-                      color: isActive ? "#c2b697" : "#fff",
-                      borderBottom: isActive ? "1px solid #c2b697" : "none",
-                      paddingBottom: isActive ? "5px" : "0",
-                    })}
-                  >
-                    Core Strengths
-                  </NavLink>
+                    Practice & Strengths
+                  </Link>
                 </li>
                 <li className="nav-item mx-3 mb-2">
                   <NavLink

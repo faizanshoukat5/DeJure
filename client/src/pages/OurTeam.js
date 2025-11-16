@@ -12,10 +12,10 @@ const OurTeam = () => {
   return (
     <div className="page our-team">
       <Helmet>
-        <title>Our Team | DeJure Law & Consulting</title>
+        <title>Our Team | De Jure Advocates & Legal Consultants</title>
         <meta
           name="description"
-          content="Meet the leadership, partners, and consultants who guide DeJure's corporate, tax, and dispute mandates across Pakistan."
+          content="Meet the leadership, partners, and consultants who guide De Jure Advocates & Legal Consultants' corporate, tax, and dispute mandates across Pakistan."
         />
       </Helmet>
       <section className="py-5" style={{ backgroundColor: "#f8f9fa" }}>

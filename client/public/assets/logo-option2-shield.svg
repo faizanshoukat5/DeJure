@@ -1,0 +1,15 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">De Jure logo with shield emblem and wordmark.</desc>
+
+  <path d="M70 20 L40 40 V90 C40 120 55 145 70 155 C85 145 100 120 100 90 V40 Z" fill="#ebe2d6" stroke="#02182b" stroke-width="3" />
+  <line x1="70" y1="35" x2="70" y2="80" stroke="#c2b697" stroke-width="3" />
+  <line x1="55" y1="45" x2="85" y2="45" stroke="#c2b697" stroke-width="3" />
+  <line x1="55" y1="45" x2="50" y2="65" stroke="#c2b697" stroke-width="2" />
+  <path d="M40 65 H60 A10 8 0 0 1 40 65 Z" fill="#c2b697" />
+  <line x1="85" y1="45" x2="90" y2="65" stroke="#c2b697" stroke-width="2" />
+  <path d="M80 65 H100 A10 8 0 0 1 80 65 Z" fill="#c2b697" />
+
+  <text x="140" y="85" font-family="'Times New Roman', 'Georgia', serif" font-size="60" fill="#02182b" font-weight="600">De Jure</text>
+  <text x="140" y="125" font-family="'Georgia', 'Times New Roman', serif" font-size="22" fill="#c2b697" letter-spacing="1.2">ADVOCATES &amp; LEGAL CONSULTANTS</text>
+</svg>

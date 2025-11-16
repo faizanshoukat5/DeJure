@@ -1,0 +1,25 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">Classic De Jure logo with pillars design.</desc>
+
+  <!-- Left pillar -->
+  <rect x="10" y="30" width="45" height="95" fill="#02182b" />
+  <rect x="5" y="25" width="55" height="8" fill="#c2b697" />
+  <rect x="5" y="125" width="55" height="8" fill="#c2b697" />
+  
+  <!-- Right pillar -->
+  <rect x="445" y="30" width="45" height="95" fill="#02182b" />
+  <rect x="440" y="25" width="55" height="8" fill="#c2b697" />
+  <rect x="440" y="125" width="55" height="8" fill="#c2b697" />
+  
+  <!-- Center text -->
+  <text x="260" y="75" text-anchor="middle" font-family="'Libre Baskerville', 'Georgia', serif" font-size="68" font-weight="700" fill="#ebe2d6">
+    <tspan font-style="italic" font-weight="400">De</tspan> <tspan>Jure</tspan>
+  </text>
+  
+  <!-- Decorative line -->
+  <line x1="80" y1="95" x2="440" y2="95" stroke="#be7413" stroke-width="2" />
+  
+  <!-- Tagline -->
+  <text x="260" y="125" text-anchor="middle" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="19" fill="#c2b697" letter-spacing="2.5" font-weight="500">ADVOCATES &amp; LEGAL CONSULTANTS</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">Contemporary De Jure logo with layered design.</desc>
+
+  <!-- Background layers -->
+  <rect x="0" y="35" width="180" height="85" fill="#02182b" opacity="0.9" />
+  <rect x="170" y="50" width="200" height="70" fill="#c2b697" opacity="0.85" />
+  <rect x="360" y="35" width="160" height="85" fill="#02182b" opacity="0.4" />
+  
+  <!-- Main wordmark with shadow -->
+  <text x="22" y="95" font-family="'Libre Baskerville', 'Georgia', serif" font-size="75" font-weight="700" fill="#000000" opacity="0.1">De Jure</text>
+  <text x="20" y="93" font-family="'Libre Baskerville', 'Georgia', serif" font-size="75" font-weight="700">
+    <tspan fill="#ebe2d6" font-style="italic" font-weight="400">De</tspan>
+    <tspan dx="8" fill="#02182b">Jure</tspan>
+  </text>
+  
+  <!-- Gold accent bar -->
+  <rect x="0" y="130" width="520" height="4" fill="#be7413" />
+  
+  <!-- Tagline -->
+  <text x="10" y="160" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="20" fill="#c2b697" letter-spacing="2.8" font-weight="500">ADVOCATES &amp; LEGAL CONSULTANTS</text>
+</svg>

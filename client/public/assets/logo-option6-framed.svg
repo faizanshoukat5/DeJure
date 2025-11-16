@@ -1,0 +1,27 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">Modern De Jure logo with geometric frame.</desc>
+
+  <!-- Outer frame -->
+  <rect x="5" y="15" width="510" height="140" fill="none" stroke="#c2b697" stroke-width="3" rx="4" />
+  <rect x="12" y="22" width="496" height="126" fill="none" stroke="#be7413" stroke-width="1.5" rx="3" />
+  
+  <!-- Background gradient effect -->
+  <rect x="15" y="25" width="240" height="120" fill="#02182b" opacity="0.95" />
+  
+  <!-- "De Jure" -->
+  <text x="30" y="90" font-family="'Libre Baskerville', 'Georgia', serif" font-size="70" font-weight="700">
+    <tspan fill="#ebe2d6" font-style="italic" font-weight="400">De</tspan>
+    <tspan dx="5" fill="#c2b697">Jure</tspan>
+  </text>
+  
+  <!-- Vertical separator -->
+  <line x1="265" y1="35" x2="265" y2="135" stroke="#be7413" stroke-width="2" />
+  
+  <!-- Tagline (vertical stacked) -->
+  <text x="285" y="70" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="20" fill="#c2b697" letter-spacing="1.8" font-weight="600">
+    <tspan x="285" dy="0">ADVOCATES &amp;</tspan>
+    <tspan x="285" dy="28">LEGAL</tspan>
+    <tspan x="285" dy="28">CONSULTANTS</tspan>
+  </text>
+</svg>

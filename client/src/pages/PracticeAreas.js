@@ -1,169 +1,287 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGavel,
-  faScaleBalanced,
-  faTruck,
-  faPeopleLine,
-  faBriefcase,
-  faScroll,
-} from "@fortawesome/free-solid-svg-icons";
-const PracticeAreas = () => {
-  return (
-    <>
-      <div className="avocatura">
-        <Helmet>
-          <title>Practice Areas | DeJure Law & Consulting</title>
-          <meta
-            name="description"
-            content="Review DeJure's corporate, tax, regulatory, and dispute resolution capabilities."
-          />
-        </Helmet>
-        <div>
-          <h6 className="guide-text ms-3 mt-4">PRACTICE AREAS</h6>
-          <div className=" pt-4 text-center">
-            <h5 className="fw-bold text-center pb-1">
-              Comprehensive legal counsel
-            </h5>
-            <h6 className="fw-bold subtitle lh-lg text-center px-5 pb-4">
-              Strategic advice for businesses, regulators, and investors across
-              Pakistan.
-            </h6>
-          </div>
-          <div className="row g-5 px-5 pt-4 ">
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100 ">
-                <div class="civil card-img-top">
-                  <div class="overlay"></div>
-                </div>
-                <div className="card-body text-center text-white py-4">
-                  <FontAwesomeIcon
-                    icon={faScaleBalanced}
-                    size="2x"
-                    className="law-icon pb-3"
-                  />
-                  <h6 className="card-title pb-2">Corporate law & governance</h6>
-                  <p className="card-text mx-1">
-                    Advisory on incorporations, restructurings, shareholders'
-                    agreements, and governance frameworks that align strategy
-                    with compliance.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100">
-                <div class="criminal card-img-top">
-                  <div class="overlay"></div>
-                </div>
-                <div className="card-body text-center text-white py-4">
-                  <FontAwesomeIcon
-                    icon={faGavel}
-                    size="2x"
-                    className="law-icon pb-3"
-                  />
-                  <h6 className="card-title pb-2">Dispute resolution & investigations</h6>
-                  <p className="card-text mx-1">
-                    Representation before courts, tribunals, and regulators,
-                    including white-collar defence, crisis response, and policy
-                    engagement.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100">
-                <div class="enforcement card-img-top">
-                  <div class="overlay"></div>
-                </div>
-                <div className="card-body text-center text-white py-4">
-                  <FontAwesomeIcon
-                    icon={faTruck}
-                    size="2x"
-                    className="law-icon pb-3"
-                  />
-                  <h6 className="card-title pb-2">Tax planning & compliance</h6>
-                  <p className="card-text mx-1">
-                    Structuring transactions, managing audits, and litigating
-                    tax disputes across federal, provincial, and local
-                    authorities.
-                  </p>
-                </div>
-              </div>
-            </div>
+import { Link, useLocation } from "react-router-dom";
 
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100">
-                <div class="family card-img-top">
-                  <div class="overlay"></div>
-                </div>
-                <div className="card-body text-center text-white py-4">
-                  <FontAwesomeIcon
-                    icon={faPeopleLine}
-                    size="2x"
-                    className="pb-3 law-icon"
-                  />
-                  <h6 className="card-title pb-2">Civil & criminal litigation</h6>
-                  <p className="card-text mx-1">
-                    Handling sensitive civil and criminal proceedings,
-                    injunctions, and enforcement actions with strategic,
-                    evidence-driven advocacy.
-                  </p>
-                </div>
-              </div>
+const focusSections = [
+  {
+    id: "civil-criminal",
+    label: "Civil & Criminal",
+    lead:
+      "Ch. Muhammad Ali ASC leads our civil and criminal practice with more than two decades of trial and appellate experience across Pakistan.",
+    summary:
+      "We guide clients through investigations, urgent relief, and long-running litigation with disciplined preparation and relentless follow-through so every matter keeps momentum.",
+    bullets: [
+      "Representation from trial courts and tribunals to the Supreme Court",
+      "Rapid response on arrests, injunctions, and white-collar investigations",
+      "Matter strategies focused on due diligence, timelines, and measurable outcomes",
+    ],
+    image: "/assets/civil-criminal.jpg",
+  },
+  {
+    id: "taxation",
+    label: "Taxation & Corporate",
+    lead:
+      "Taxation and corporate advisory remain the firm's flagship offering, covering planning, compliance, controversy, and board-level governance.",
+    summary:
+      "From structuring transactions to arguing precedent-setting appeals, we partner with in-house finance teams to secure tax-efficient positions and seamless regulatory compliance.",
+    bullets: [
+      "End-to-end support on income, sales, customs, and provincial levies",
+      "Preparation of returns, withholding reviews, and accounting health-checks",
+      "Representation before FBR, SECP, appellate tribunals, High Courts, and Supreme Court",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "banking",
+    label: "Banking & Finance",
+    lead:
+      "We advise banks, DFIs, modarabas, and fintech lenders on documentation, security perfection, and recovery across complex portfolios.",
+    summary:
+      "Our team drafts and negotiates every layer of finance documentation, vets collateral, and conducts contentious recoveries so institutions can deploy capital with confidence.",
+    bullets: [
+      "Facility, security, and intercreditor documentation tailored to each product",
+      "Collateral validation with complete title and revenue-record sweeps",
+      "Demand notices, negotiations, and litigation under banking recovery regimes",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "arbitration",
+    label: "Arbitration",
+    lead:
+      "De Jure Advocates & Legal Consultants maintains a dedicated arbitration desk led by Harvard-trained counsel Hassan Kamran Bashir alongside Aitzaz Aslam.",
+    summary:
+      "We craft bespoke procedures, seat strategies, and enforcement plans so commercial parties resolve disputes faster than traditional litigation allows.",
+    bullets: [
+      "Institutional and ad-hoc mandates across infrastructure, energy, and joint ventures",
+      "Panel of former judges and subject-matter experts to serve as neutrals or co-counsel",
+      "Award enforcement, challenge proceedings, and ADR program design",
+    ],
+    image: "/assets/arbitration.jpg",
+  },
+  {
+    id: "trade",
+    label: "Trade & WTO",
+    lead:
+      "Our trade law practice protects local industry, navigates budgetary measures, and aligns clients with WTO and FTA frameworks.",
+    summary:
+      "We intervene on anti-dumping, safeguard, and countervailing matters, shape tariff policy, and guide businesses on cross-border competitiveness.",
+    bullets: [
+      "Petitions and defences in trade-remedy investigations",
+      "Policy submissions covering tariff schedules, FTAs, and budget interventions",
+      "Integrated tax, customs, and WTO compliance advisory for exporters and banks",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "business-law",
+    label: "Business & Commercial Law",
+    lead:
+      "We partner with entrepreneurs, established enterprises, and investors to structure deals, resolve disputes, and safeguard operational interests.",
+    summary:
+      "Our business law team handles everything from formation and contracts to shareholder agreements and commercial litigation, ensuring clients navigate growth, partnerships, and risk with clarity.",
+    bullets: [
+      "Company incorporation, partnership agreements, and shareholder arrangements",
+      "Commercial contract drafting, negotiation, and dispute resolution",
+      "Mergers, acquisitions, joint ventures, and regulatory compliance",
+    ],
+    image: "/assets/business-law.jpg",
+  },
+];
+
+const practiceAreaTopics = [
+  "Arbitration",
+  "Banking Law",
+  "Civil Law",
+  "Corporate Law",
+  "Commercial Law",
+  "Contracts",
+  "Criminal Law",
+  "Customs Law",
+  "Human Rights",
+  "Immigration Law",
+  "Income Tax Law",
+  "International Taxation",
+  "Intellectual Property",
+  "International Agreements",
+  "International Law",
+  "Family Law",
+  "Management Consultancy",
+  "Property & Real Estate",
+  "Sales Tax Law",
+  "Telecommunication Law",
+  "WTO / Trade Law",
+  "Labour & Employment",
+];
+
+const practiceVisuals = [
+  {
+    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
+    alt: "Advisors collaborating in a boardroom",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
+    alt: "Detail shot of legal documents with glasses",
+  },
+];
+
+const PracticeAreas = ({ focusTarget }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = focusTarget ? `#${focusTarget}` : location.hash;
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const targetId = hash.replace("#", "");
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [focusTarget, location]);
+
+  const practiceColumns = [[], [], []];
+  practiceAreaTopics.forEach((topic, index) => {
+    practiceColumns[index % practiceColumns.length].push(topic);
+  });
+
+  return (
+    <div className="expertise-page" id="practice-areas">
+      <Helmet>
+        <title>
+          Core Strengths & Practice Areas | De Jure Advocates & Legal
+          Consultants
+        </title>
+        <meta
+          name="description"
+          content="Explore De Jure Advocates & Legal Consultants' core strengths and practice areas spanning taxation, disputes, banking, trade, arbitration, and policy advisory."
+        />
+      </Helmet>
+
+      <section className="expertise-hero text-center text-md-start">
+        <div className="container py-5">
+          <h6 className="guide-text">CORE STRENGTHS & PRACTICE AREAS</h6>
+          <div className="row align-items-center g-4 pt-3">
+            <div className="col-md-7">
+              <h2 className="fw-bold text-white mb-3">
+                Dedicated teams for complex mandates
+              </h2>
+              <p className="hero-copy">
+                We combine courtroom advocacy with regulatory insight to deliver pragmatic solutions. Our partners stay engaged with regulators, industry bodies, and academia so clients receive advice that anticipates change—not just reacts to it.
+              </p>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100">
-                <div class="labor card-img-top">
-                  <div class="overlay"></div>
-                </div>
-                <div className="card-body text-center text-white py-4">
-                  <FontAwesomeIcon
-                    icon={faBriefcase}
-                    size="2x"
-                    className="law-icon pb-3"
-                  />
-                  <h6 className="card-title pb-2">Banking & finance</h6>
-                  <p className="card-text mx-1">
-                    Counsel on project finance, lending, securities, and
-                    regulatory approvals for domestic and cross-border
-                    transactions.
-                  </p>
-                </div>
-              </div>
+            <div className="col-md-5 text-md-end text-center">
+              <Link to="/contact" className="btn btn-outline-light">
+                Request a consultation
+              </Link>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100">
-                <div class="business card-img-top">
-                  <div class="overlay"></div>
-                </div>
-                <div className="card-body text-center text-white py-4">
-                  <FontAwesomeIcon
-                    icon={faScroll}
-                    size="2x"
-                    className="law-icon pb-3"
-                  />
-                  <h6 className="card-title pb-2">International trade & policy</h6>
-                  <p className="card-text mx-1">
-                    Guidance on customs, trade remedies, treaty negotiations,
-                    and policy development for public and private sector
-                    stakeholders.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="container py-4 ">
-            <p className="more-services py-4">
-              Our team also supports mergers, energy projects, public-private
-              partnerships, and bespoke advisory assignments that demand a
-              multidisciplinary perspective.
-            </p>
           </div>
         </div>
-      </div>
-    </>
+      </section>
+
+      <section id="core-strengths" className="container py-5">
+        <div className="section-heading text-center text-md-start pb-4">
+          <h3 className="fw-bold">Core Strengths</h3>
+          <p className="subtitle" style={{ maxWidth: "720px" }}>
+            Each spotlight mirrors the depth of the standalone practice pages—complete with veteran leads, tailored service menus, and contextual imagery.
+          </p>
+        </div>
+        <div className="focus-section-list">
+          {focusSections.map(({ id, label, lead, summary, bullets, image }, index) => (
+            <article className="focus-section py-4" key={id} id={id}>
+              <div className={`row align-items-center gy-4 gx-lg-5 ${index % 2 !== 0 ? "flex-lg-row-reverse" : ""}`}>
+                <div className="col-lg-6">
+                  <div className="focus-copy">
+                    <p className="eyebrow mb-2">Practice Spotlight</p>
+                    <h4 className="fw-bold mb-3">{label}</h4>
+                    <p className="lead-text mb-3">{lead}</p>
+                    <p className="mb-4 text-body-light">{summary}</p>
+                    <ul className="focus-bullets">
+                      {bullets.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div
+                    className="focus-media"
+                    style={{ 
+                      backgroundImage: id === 'arbitration' 
+                        ? `linear-gradient(135deg, rgba(5, 41, 92, 0.45), rgba(5, 41, 92, 0.25)), url(${image})`
+                        : `linear-gradient(135deg, rgba(3, 22, 42, 0.65), rgba(3, 22, 42, 0.35)), url(${image})`
+                    }}
+                    role="img"
+                    aria-label={`${label} imagery`}
+                  />
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="practice-area-list" className="practice-areas-section py-5">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-7">
+              <div className="section-heading text-center text-md-start pb-4">
+                <h3 className="fw-bold text-white">Practice Areas</h3>
+                <p className="subtitle text-white-50" style={{ maxWidth: "680px" }}>
+                  We advise businesses, financial institutions, public bodies, and multinationals across a wide range of sectors. These are the mandates we are most frequently trusted with.
+                </p>
+              </div>
+              <div className="row g-4">
+                {practiceColumns.map((column, columnIndex) => (
+                  <div className="col-12 col-md-4" key={`practice-column-${columnIndex}`}>
+                    <ul className="practice-area-list">
+                      {column.map((area) => (
+                        <li key={area}>{area}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <div className="practice-visual-stack">
+                {practiceVisuals.map(({ src, alt }, index) => (
+                  <figure
+                    key={src}
+                    className={`practice-visual practice-visual-${index}`}
+                  >
+                    <img src={src} alt={alt} loading="lazy" />
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="practice-footer-separator">
+        <div className="container py-4 py-md-5">
+          <div className="row align-items-center g-3">
+            <div className="col-md-8 text-center text-md-start">
+              <h4 className="fw-bold mb-2">Need breathing room to plan your next move?</h4>
+              <p className="mb-0 text-body-light">
+                Our partners can walk you through dispute, tax, or transaction strategies before you commit resources.
+              </p>
+            </div>
+            <div className="col-md-4 text-center text-md-end">
+              <Link to="/contact" className="btn btn-outline-dark px-4 py-2 fw-semibold">
+                Speak with the team
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
+
 export default PracticeAreas;

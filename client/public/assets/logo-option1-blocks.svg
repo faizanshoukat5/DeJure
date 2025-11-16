@@ -1,0 +1,27 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">De Jure professional legal logo with elegant typography.</desc>
+
+  <!-- Navy rectangle (left) -->
+  <rect x="0" y="0" width="240" height="135" fill="#02182b" rx="2" />
+  
+  <!-- Beige rectangle (right, overlapping) -->
+  <rect x="190" y="30" width="330" height="105" fill="#c2b697" rx="2" />
+  
+  <!-- Subtle border accent -->
+  <rect x="190" y="30" width="330" height="105" fill="none" stroke="#02182b" stroke-width="1" rx="2" opacity="0.15" />
+  
+  <!-- "De" in elegant italic with subtle shadow -->
+  <text x="52" y="97" font-family="'Libre Baskerville', 'Georgia', 'Times New Roman', serif" font-size="72" font-style="italic" fill="#000000" font-weight="400" opacity="0.08">De</text>
+  <text x="50" y="95" font-family="'Libre Baskerville', 'Georgia', 'Times New Roman', serif" font-size="72" font-style="italic" fill="#ebe2d6" font-weight="400">De</text>
+  
+  <!-- "Jure" in bold serif with shadow -->
+  <text x="207" y="107" font-family="'Libre Baskerville', 'Georgia', 'Times New Roman', serif" font-size="78" fill="#000000" font-weight="600" opacity="0.08">Jure</text>
+  <text x="205" y="105" font-family="'Libre Baskerville', 'Georgia', 'Times New Roman', serif" font-size="78" fill="#02182b" font-weight="700">Jure</text>
+  
+  <!-- Elegant separator line -->
+  <line x1="10" y1="150" x2="380" y2="150" stroke="#be7413" stroke-width="1.5" opacity="0.6" />
+  
+  <!-- Tagline in refined uppercase -->
+  <text x="10" y="175" font-family="'Montserrat', 'Open Sans', 'Helvetica Neue', sans-serif" font-size="20" fill="#be7413" letter-spacing="2.5" font-weight="500">ADVOCATES &amp; LEGAL CONSULTANTS</text>
+</svg>
