@@ -17,9 +17,19 @@ const ContactForm = () => {
     };
     const serviceID = process.env.REACT_APP_SERVICE_ID;
     const templateID = process.env.REACT_APP_TEMPLATE_ID;
-    const userID = process.env.REACT_APP_USER_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_USER_ID;
 
-    emailjs.send(serviceID, templateID, params, userID).then(
+    // Validate EmailJS env vars before calling the library to avoid the thrown error
+    if (!publicKey || !serviceID || !templateID) {
+      console.error("Missing EmailJS configuration. publicKey/serviceID/templateID required.");
+      setStatus("Send message");
+      alert(
+        "Contact form is not configured. Please set EmailJS keys in `client/.env`. See `client/.env.example` for required variables."
+      );
+      return;
+    }
+
+    emailjs.send(serviceID, templateID, params, publicKey).then(
       (response) => {
   console.log("SUCCESS!", response.status, response.text);
   setStatus("Send message");

@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Environment variables (EmailJS)
+
+This project uses EmailJS for the contact form. Create a `.env` file inside the `client/` folder with the following variables (do not commit `.env`):
+
+```
+# REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key_here
+# REACT_APP_SERVICE_ID=service_xxx
+# REACT_APP_TEMPLATE_ID=template_xxx
+```
+
+The code will also accept the older `REACT_APP_USER_ID` name as a fallback for the public key.
+
+Get these values from the EmailJS dashboard: https://dashboard.emailjs.com/admin/account
