@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+  const location = useLocation();
+  const achievementsRef = useRef(null);
+
+  useEffect(() => {
+    if (location && location.hash && (location.hash === "#achievements")) {
+      // small delay to ensure element is rendered
+      setTimeout(() => {
+        const el = document.getElementById("achievements") || achievementsRef.current;
+        if (el && el.scrollIntoView) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
+    }
+  }, [location]);
+
   return (
     <div className="info">
       <Helmet>
-        <title>About Us | DeJure Law & Consulting</title>
+        <title>Firm Overview & Achievements | DeJure Law & Consulting</title>
         <meta
           name="description"
-          content="Learn about DeJure's mission, values, leadership approach, and how we partner with clients."
+          content="Explore DeJure's firm overview, mission, leadership approach, and landmark achievements."
         />
       </Helmet>
       <div>
-        <h6 className="guide-text ms-3 mt-4">ABOUT DEJURE</h6>
+        <h6 className="guide-text ms-3 mt-4">FIRM OVERVIEW & ACHIEVEMENTS</h6>
         <div className="container py-5">
           <div className="row g-5 align-items-center">
             <div className="col-lg-6">
@@ -85,6 +101,57 @@ const About = () => {
               />
             </div>
           </div>
+          <section id="achievements" ref={achievementsRef} className="achievements-banner text-white mt-5">
+            <div className="container py-5">
+              <div className="row g-5 align-items-center">
+                <div className="col-lg-5">
+                  <p className="guide-text mb-2">Track Record</p>
+                  <h5 className="fw-bold text-white pb-3">Key Achievements</h5>
+                  <p className="mb-0">
+                    Highlights from DeJure&apos;s recent achievements illustrate the
+                    firm&apos;s courtroom presence, policy expertise, and trusted
+                    advisory role for leading institutions.
+                  </p>
+                </div>
+                <div className="col-lg-7">
+                  <ul className="achievements-list">
+                    <li>
+                      Engineered efficient tax planning regimes so clients can
+                      claim maximum lawful deductions and exemptions.
+                    </li>
+                    <li>
+                      Successfully contested high-stakes taxation and corporate
+                      law matters before appellate tribunals, High Courts, and
+                      the Supreme Court of Pakistan.
+                    </li>
+                    <li>
+                      Earned industry-wide recognition for articulate pleadings
+                      across tax, civil, criminal, and arbitration disputes.
+                    </li>
+                    <li>
+                      Regularly advise on complex taxation and corporate issues,
+                      delivering litigation, opinions, and drafting support for
+                      superior courts.
+                    </li>
+                    <li>
+                      Lead Partner Hassan Kamran Bashir facilitated CAREC&apos;s
+                      “Contract Enforcement” workshop in Urumqi, China (July
+                      2018).
+                    </li>
+                    <li>
+                      Provided consultancy to the World Bank on the Punjab
+                      Revenue Authority Tax Litigation Book (Nov 2016 – Jul
+                      2017).
+                    </li>
+                    <li>
+                      Delivered consultancy for FAO on federal and provincial
+                      legislative drafts (2015 – 2016).
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
           <div className="row g-5 align-items-center pt-5">
             <div className="col-12">
               <div className="card shadow-sm border-0">

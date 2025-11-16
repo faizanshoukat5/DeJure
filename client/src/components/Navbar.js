@@ -52,6 +52,8 @@ const Navbar = () => {
   const navClasses = `nav${isSticky ? " nav-sticky" : ""}`;
   const practiceLinkActive =
     location.pathname === "/practice-areas" || location.pathname === "/core-strengths";
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const aboutActive = location.pathname === "/about";
 
   return (
     <>
@@ -104,29 +106,68 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </li>
-                <li className="nav-item mx-3 mb-2">
-                  <NavLink
-                    to="/about"
-                    style={({ isActive }) => ({
+                <li
+                  className={`nav-item mx-3 mb-2 dropdown${aboutOpen ? " show" : ""}`}
+                  onMouseLeave={() => setAboutOpen(false)}
+                >
+                  <button
+                    type="button"
+                    className="nav-link dropdown-toggle"
+                    aria-expanded={aboutOpen}
+                    onClick={() => setAboutOpen((s) => !s)}
+                    style={{
+                      background: "transparent",
+                      border: "none",
+                      padding: 0,
+                      margin: 0,
+                      color: aboutActive ? "#c2b697" : "#fff",
                       textDecoration: "none",
-                      color: isActive ? "#c2b697" : "#fff",
-                      borderBottom: isActive ? "1px solid #c2b697" : "none",
-                      paddingBottom: isActive ? "5px" : "0",
-                    })}
+                      fontSize: "1rem",
+                    }}
                   >
                     About
-                  </NavLink>
+                  </button>
+                  <ul className={`dropdown-menu${aboutOpen ? " show" : ""}`} style={{ background: "#02182b", border: "1px solid rgba(194,182,151,0.12)" }}>
+                    <li>
+                      <Link
+                        to="/about"
+                        className="dropdown-item"
+                        onClick={() => {
+                          setAboutOpen(false);
+                          setMobileOpen(false);
+                          // ensure the page opens from the top when selecting Firm Overview
+                          setTimeout(() => {
+                            try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0,0); }
+                          }, 60);
+                        }}
+                        style={{ color: location.pathname === "/about" ? "#c2b697" : "#fff", textDecoration: 'none' }}
+                      >
+                        Firm Overview
+                      </Link>
+                    </li>
+                    <li>
+                        <Link
+                          to="/about#achievements"
+                          className="dropdown-item"
+                          onClick={() => { setAboutOpen(false); setMobileOpen(false); }}
+                          style={{ color: (location.pathname === "/about" && location.hash === "#achievements") ? "#c2b697" : "#fff", textDecoration: 'none' }}
+                        >
+                          Achievements
+                        </Link>
+                    </li>
+                  </ul>
                 </li>
                 <li className="nav-item mx-3 mb-2">
                   <Link
                     to="/practice-areas"
+                    className="nav-link"
                     onClick={() => setMobileOpen(false)}
                     style={{
                       textDecoration: "none",
                       color: practiceLinkActive ? "#c2b697" : "#fff",
                       borderBottom: practiceLinkActive ? "1px solid #c2b697" : "none",
                       paddingBottom: practiceLinkActive ? "5px" : "0",
-                      fontWeight: practiceLinkActive ? 600 : 500,
+                      fontWeight: 700,
                     }}
                   >
                     Practice & Strengths

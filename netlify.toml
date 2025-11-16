@@ -1,0 +1,22 @@
+# Netlify configuration for DeJure React app
+# Deploys the React app located in the `client` folder.
+
+[build]
+  base = "client"
+  publish = "client/build"
+  command = "npm run build"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "16.15.1"
+  NPM_VERSION = "8.19.3"
+
+# Ensure single-page app routing works correctly
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Production environment overrides (optional)
+[context.production.environment]
+  NODE_ENV = "production"
