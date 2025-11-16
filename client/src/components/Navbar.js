@@ -49,6 +49,16 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Close mobile menu and scroll to top when pathname changes (navigate to a new page)
+  useEffect(() => {
+    setMobileOpen(false);
+    try {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (e) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
+
   const navClasses = `nav${isSticky ? " nav-sticky" : ""}`;
   const practiceLinkActive =
     location.pathname === "/practice-areas" || location.pathname === "/core-strengths";

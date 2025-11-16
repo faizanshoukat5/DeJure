@@ -736,6 +736,45 @@
     min-height: 220px;
   }
 }
+/* Mobile navbar adjustments: make menu a left-aligned vertical list and remove horizontal margins that cause indentation */
+@media (max-width: 767.98px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    gap: 0.25rem;
+  }
+
+  .navbar-nav .nav-item {
+    display: block;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0.25rem 0;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .dropdown-toggle,
+  .navbar-nav .dropdown-item {
+    display: block;
+    width: 100%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    text-align: left;
+  }
+
+  /* ensure dropdown items are indented slightly under their parent for clarity */
+  .navbar-nav .dropdown .dropdown-item {
+    padding-left: 1rem;
+  }
+
+  /* remove extra margin from CTA in mobile drawer */
+  .nav-item.ms-2.d-none.d-md-flex {
+    margin: 0 !important;
+  }
+}
 @keyframes slide-in {
   from {
     transform: translateY(-70%);
