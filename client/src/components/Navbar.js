@@ -86,7 +86,8 @@ const Navbar = () => {
                     className="img-fluid logo-image"
                     alt="De Jure Advocates & Legal Consultants logo"
                     style={{ height: isSticky ? '64px' : '100px', width: 'auto', maxWidth: '490px', transition: 'height 240ms ease' }}
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                   />
                 );
               })()}

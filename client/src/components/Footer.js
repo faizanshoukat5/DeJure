@@ -25,6 +25,8 @@ const Footer = () => {
                 className="img-fluid logo-image"
                 alt="De Jure Advocates & Legal Consultants logo"
                 style={{ height: '70px', width: 'auto', maxWidth: '380px', marginBottom: '1.5rem' }}
+                loading="eager"
+                fetchpriority="high"
               />
               <p className="content pt-3">
                 De Jure Advocates & Legal Consultants pairs courtroom insight
