@@ -211,9 +211,7 @@ const PracticeAreas = ({ focusTarget }) => {
                   <div
                     className="focus-media"
                     style={{ 
-                      backgroundImage: id === 'arbitration' 
-                        ? `linear-gradient(135deg, rgba(5, 41, 92, 0.45), rgba(5, 41, 92, 0.25)), url(${image})`
-                        : `linear-gradient(135deg, rgba(3, 22, 42, 0.65), rgba(3, 22, 42, 0.35)), url(${image})`
+                      backgroundImage: `linear-gradient(135deg, rgba(85, 9, 9, 0.55), rgba(60, 4, 4, 0.35)), url(${image})`
                     }}
                     role="img"
                     aria-label={`${label} imagery`}

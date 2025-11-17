@@ -1,0 +1,27 @@
+<svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" preserveAspectRatio="xMinYMid meet">
+  <title id="title">De Jure Advocates &amp; Legal Consultants — Option A (Footer)</title>
+  <desc id="desc">Footer-optimized wordmark: darker bottom text and separator for improved legibility on light panels.</desc>
+  <defs>
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <g filter="url(#logo-shadow)">
+    <circle cx="85" cy="85" r="65" fill="#550909" stroke="#342e2a" stroke-width="4" />
+    <circle cx="85" cy="85" r="55" fill="none" stroke="#dcd7cf" stroke-opacity="0.45" stroke-width="1.5" />
+    <text x="85" y="105" text-anchor="middle" font-family="'Libre Baskerville', 'Georgia', serif" font-size="56" fill="#dcd7cf" font-weight="700">DJ</text>
+  </g>
+
+  <text x="175" y="75" font-family="'Libre Baskerville', 'Georgia', serif" font-size="68" font-weight="700">
+    <tspan fill="#550909" font-style="italic" font-weight="400">De</tspan>
+    <tspan dx="8" fill="#342e2a">Jure</tspan>
+  </text>
+
+  <line x1="175" y1="100" x2="420" y2="100" stroke="#2b2623" stroke-width="1.8" opacity="1" />
+
+  <text font-family="'Montserrat', 'Open Sans', sans-serif" font-size="18" fill="#342e2a" letter-spacing="2.3" font-weight="600">
+    <tspan x="175" y="122">ADVOCATES &amp; LEGAL</tspan>
+    <tspan x="175" y="142">CONSULTANTS</tspan>
+  </text>
+</svg>

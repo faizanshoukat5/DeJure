@@ -76,13 +76,20 @@ const Navbar = () => {
               to="/"
               className="navbar-brand d-flex align-items-center text-decoration-none text-white"
             >
-              <img
-                src="/assets/logo-option7-seal.svg"
-                className="img-fluid logo-image"
-                alt="De Jure Advocates & Legal Consultants logo"
-                style={{ height: isSticky ? '64px' : '100px', width: 'auto', maxWidth: '490px', transition: 'height 240ms ease' }}
-                loading="lazy"
-              />
+              {(() => {
+                const envLogo = process.env.REACT_APP_LOGO_VARIANT; // e.g. logo-option7-seal-A@1x.png
+                // Default to the navbar SVG with monogram so the navbar uses the matching brand mark
+                const src = envLogo ? `/assets/${envLogo}` : "/assets/logo-option7-seal-A-navbar.svg";
+                return (
+                  <img
+                    src={src}
+                    className="img-fluid logo-image"
+                    alt="De Jure Advocates & Legal Consultants logo"
+                    style={{ height: isSticky ? '64px' : '100px', width: 'auto', maxWidth: '490px', transition: 'height 240ms ease' }}
+                    loading="lazy"
+                  />
+                );
+              })()}
             </Link>
             {/* toggle button for mobile nav */}
             <button

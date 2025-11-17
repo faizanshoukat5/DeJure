@@ -33,11 +33,11 @@ const TopBanner = () => {
               className="banner-icon phone-icon pe-2"
               size="1x"
             />
-            <a href="tel:+923009462171" className="text-decoration-none text-dark fw-semibold">
+            <a href="tel:+923009462171" className="text-decoration-none fw-semibold">
               ISB: +92 300-9462171
             </a>
             <span className="mx-2">|</span>
-            <a href="tel:+923214344392" className="text-decoration-none text-dark fw-semibold">
+            <a href="tel:+923214344392" className="text-decoration-none fw-semibold">
               LHR: +92 321-4344392
             </a>
           </div>
