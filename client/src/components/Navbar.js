@@ -68,7 +68,7 @@ const Navbar = () => {
   return (
     <>
       <header ref={navRef} className={navClasses}>
-        <TopBanner />
+        <TopBanner isCompact={isSticky} />
         <nav className="navbar navbar-dark w-100 navbar-expand-md slide-in">
           <div className="container-xxl">
             {/* logo */}

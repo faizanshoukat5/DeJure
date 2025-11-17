@@ -34,6 +34,21 @@ body {
   color: var(--color-text-base);
 }
 
+/* Desktop-only visual zoom: scales UI to 90% for non-touch/desktop viewports */
+.desktop-zoom {
+  transform: scale(0.9);
+  transform-origin: 0 0;
+  -moz-transform: scale(0.9);
+  -moz-transform-origin: 0 0;
+  /* compensate layout width so scaled content fits viewport and avoids horizontal scrollbar */
+  width: calc(100% / 0.9);
+}
+
+/* Prevent horizontal scroll when desktop zoom is applied */
+html.desktop-zoom, body.desktop-zoom {
+  overflow-x: hidden;
+}
+
 .subtitle {
   color: var(--color-text-muted);
 }
@@ -81,6 +96,20 @@ body {
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: 0.02rem;
+}
+
+.banner-compact {
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.banner-phone-section {
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.banner-compact .banner-phone-section {
+  font-size: 0.75rem;
 }
 
 @media (max-width: 576px) {
@@ -153,21 +182,33 @@ body {
 }
 
 /* Navbar CTA (Request a consultation) */
-.nav-cta {
+.nav-cta.btn,
+a.nav-cta.btn,
+.nav-item .nav-cta.btn {
+  /* Same warm charcoal background as top banner */
   background-color: var(--color-warm-charcoal) !important;
-  color: var(--color-brand-jure-bg) !important;
+  background-image: none !important;
+  color: #ffffff !important;
   border: 1px solid rgba(var(--color-black-rgb),0.12) !important;
   padding: 0.45rem 0.9rem !important;
   border-radius: 0.5rem !important;
   font-weight: 700 !important;
-  box-shadow: 0 6px 18px rgba(var(--color-black-rgb), 0.08);
+  box-shadow: 0 4px 12px rgba(var(--color-black-rgb), 0.06) !important;
   text-decoration: none !important;
+  transition: all 0.2s ease !important;
 }
-.nav-cta:hover,
-.nav-cta:focus {
+.nav-cta.btn:hover,
+.nav-cta.btn:focus,
+.nav-cta.btn:active,
+a.nav-cta.btn:hover,
+a.nav-cta.btn:focus,
+.nav-item .nav-cta.btn:hover {
   background-color: var(--color-warm-charcoal-2) !important;
-  color: var(--color-surface) !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: rgba(var(--color-black-rgb),0.18) !important;
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(var(--color-black-rgb), 0.08) !important;
 }
 
 .nav-sticky {
@@ -1196,6 +1237,31 @@ footer .bg-dark {
   height: 10px;
   background-color: var(--color-accent);
   border-radius: 2px;
+}
+
+/* New 'Why choose us' styles */
+.why-choose {
+  padding: 0;
+  max-width: 700px;
+}
+
+.why-choose-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-base);
+  margin: 0;
+  text-align: justify;
+}
+
+.why-choose-visual img {
+  border-left: 4px solid var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .reasons { grid-template-columns: 1fr; }
+}
+@media (min-width: 992px) {
+  .reasons { grid-template-columns: 1fr 1fr; }
 }
 
 /* PEOPLE / OUR TEAM ====================== */

@@ -6,7 +6,6 @@ import {
   faCalendarCheck,
   faFileCircleCheck,
   faCommentsDollar,
-  faGavel,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Acasa = () => {
@@ -286,23 +285,22 @@ const Acasa = () => {
           <div className="container d-flex flex-column justify-content-center align-items-center">
             <h5 className="h-50 lh-base text-center pb-4">Why clients choose us</h5>
           </div>
-          <div className="row mt-4 flex-column flex-md-row mb-3">
-            <div className="col col-md-7 order-md-2">
-              <ul className="my-list">
-                <li>Client-centric approach focused on efficiency and outcomes.</li>
-                <li>Specialists covering corporate, tax, regulatory, and dispute matters.</li>
-                <li>Integrity-driven partnerships built on transparency and trust.</li>
-                <li>Collaborative teamwork across our Islamabad and Lahore offices.</li>
-                <li>Innovative solutions informed by policy insight and industry knowledge.</li>
-              </ul>
+          <div className="row mt-4 align-items-center mb-3">
+            <div className="col-md-7 order-md-2">
+              <div className="why-choose">
+                <p className="why-choose-text">
+                  Combinăm servicii concentrate pe client cu expertiză profundă în domenii corporative, fiscale, reglementare și litigii. Abordarea noastră se bazează pe integritate, transparență și colaborare între birourile noastre din Islamabad și Lahore. Cu peste 15 ani de experiență, oferim soluții inovatoare adaptate obiectivelor de afaceri unice ale fiecărui client.
+                </p>
+              </div>
             </div>
-            <div className=" col col-md-5 order-md-2 mt-5">
-              <div className="square container d-flex flex-column justify-content-center align-items-center py-5 w-50 border border-white border-4 fw-bold">
-                <div>
-                  <FontAwesomeIcon icon={faGavel} size="2x" />
-                </div>
-                <div>15+</div>
-                <div>years advising businesses</div>
+            <div className="col-md-5 order-md-1 mt-4 mt-md-0">
+              <div className="why-choose-visual">
+                <img
+                  src="/assets/lawyer-why-choose-us.jpeg"
+                  className="img-fluid rounded-3 shadow"
+                  alt="Profesional consultanta juridica"
+                  style={{ maxHeight: "220px", width: "100%", objectFit: "cover" }}
+                />
               </div>
             </div>
           </div>
