@@ -21,10 +21,10 @@ const Footer = () => {
           <div className="row g-4 align-items-start">
             <div className="col-lg-4 text-center text-lg-start">
               <img
-                src="/assets/logo-option7-seal-A-footer-img.svg"
+                src="/assets/logo-dejure-main.jpg"
                 className="img-fluid logo-image"
                 alt="De Jure Advocates & Legal Consultants logo"
-                style={{ height: '70px', width: 'auto', maxWidth: '380px', marginBottom: '1.5rem' }}
+                style={{ height: '70px', width: 'auto', maxWidth: '480px' }}
                 loading="eager"
                 fetchpriority="high"
               />
