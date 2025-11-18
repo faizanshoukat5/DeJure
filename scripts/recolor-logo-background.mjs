@@ -102,13 +102,15 @@ const BLACK_THRESHOLD = 40;  // treat as near-black if all channels <= this
   const meta = await sharp(outputPath).metadata();
   const wpx = meta.width || 800;
   const hpx = meta.height || 400;
-  const bandY = Math.floor(hpx * 0.74);
-  const marginBottom = Math.floor(hpx * 0.06);
-  const fontSize = Math.floor(wpx * 0.075); // ~7.5% of width
+  const bandY = Math.floor(hpx * 0.80);
+  const textY = Math.floor(hpx * 0.90);
+  const fontSize = Math.floor(wpx * 0.055); // slightly larger base
+  // Use textLength to force the text to occupy ~88-92% of the logo width for a perfect fit
+  const targetTextLength = Math.floor(wpx * 0.9);
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${wpx}" height="${hpx}" viewBox="0 0 ${wpx} ${hpx}" xmlns="http://www.w3.org/2000/svg">
   <rect x="0" y="${bandY}" width="${wpx}" height="${hpx - bandY}" fill="${TARGET_GRAY_HEX}" />
-  <text x="50%" y="${hpx - marginBottom}" fill="#FFFFFF" text-anchor="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-size="${fontSize}" font-weight="600">
+  <text x="50%" y="${textY}" fill="#FFFFFF" text-anchor="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-size="${fontSize}" font-weight="400" textLength="${targetTextLength}" lengthAdjust="spacingAndGlyphs">
     Advocates &amp; Legal Consultants
   </text>
 </svg>`;
