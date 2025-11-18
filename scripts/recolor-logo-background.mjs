@@ -104,7 +104,7 @@ const BLACK_THRESHOLD = 40;  // treat as near-black if all channels <= this
   const hpx = meta.height || 400;
   const bandY = Math.floor(hpx * 0.80);
   const textY = Math.floor(hpx * 0.90);
-  const fontSize = Math.floor(wpx * 0.055); // slightly larger base
+  const fontSize = Math.floor(wpx * 0.065); // increased a bit for better readability
   // Use textLength to force the text to occupy ~88-92% of the logo width for a perfect fit
   const targetTextLength = Math.floor(wpx * 0.9);
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
