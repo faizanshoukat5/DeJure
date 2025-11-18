@@ -256,6 +256,7 @@ a.nav-cta.btn:focus,
 .navbar .navbar-collapse {
   display: flex;
   align-items: center;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
 .navbar .container-xxl {
@@ -339,11 +340,11 @@ a.nav-cta.btn:focus,
   transform: none !important;
   min-width: 12rem;
   z-index: 2000;
-  border: 1px solid rgba(221, 51, 51, 0.18);
-  background: linear-gradient(180deg, rgba(85, 9, 9, 0.98), rgba(60, 4, 4, 0.95));
+  border: 1px solid rgba(var(--color-black-rgb), 0.06);
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
   padding: 0.35rem 0;
   border-radius: 0.45rem;
-  box-shadow: 0 12px 28px rgba(85, 9, 9, 0.35);
+  box-shadow: 0 12px 28px rgba(var(--color-primary-rgb), 0.12);
 }
 
 /* On small screens, render dropdown-menu as part of flow (drawer style) so it pushes content instead of overlapping */
@@ -401,6 +402,12 @@ a.nav-cta.btn:focus,
   padding: 0.35rem 0;
 }
 
+/* Specific refinement for About dropdown banner to better match site theme */
+.navbar .about-dropdown-menu {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+  border: 1px solid rgba(var(--color-black-rgb), 0.06);
+}
+
 .navbar .dropdown-item {
   font-weight: 600;
   color: rgba(255,255,255,0.94);
@@ -411,6 +418,20 @@ a.nav-cta.btn:focus,
 .navbar .dropdown-item:hover {
   background-color: rgba(221, 51, 51, 0.08);
   color: var(--color-accent);
+}
+
+/* Theme-aware active state for dropdown items (used by Navbar.js via `active-dropdown` class) */
+.navbar .dropdown-item.active-dropdown {
+  color: var(--color-cta-gray);
+  font-weight: 700;
+}
+
+/* Mobile (drawer) override: slightly different contrast when dropdowns are rendered in flow */
+@media (max-width: 767.98px) {
+  .navbar-nav .dropdown .dropdown-item.active-dropdown {
+    color: var(--color-text-base);
+    background-color: rgba(var(--color-primary-rgb), 0.06);
+  }
 }
 
 /* Slightly increase visibility of active nav link underline */
@@ -469,6 +490,7 @@ a.nav-cta.btn:focus,
   background: #fff;
   display: block;
   position: relative;
+  transition: background 0.3s ease;
 }
 
 .navbar-toggler .navbar-toggler-icon::before,
@@ -479,6 +501,7 @@ a.nav-cta.btn:focus,
   width: 20px;
   height: 2px;
   background: #fff;
+  transition: transform 0.3s ease, top 0.3s ease;
 }
 
 .navbar-toggler .navbar-toggler-icon::before {
@@ -495,10 +518,12 @@ a.nav-cta.btn:focus,
 
 .navbar-toggler.open .navbar-toggler-icon::before {
   transform: translateY(6px) rotate(45deg);
+  top: 0;
 }
 
 .navbar-toggler.open .navbar-toggler-icon::after {
   transform: translateY(-6px) rotate(-45deg);
+  top: 0;
 }
 
 .nav-cta {
@@ -801,6 +826,15 @@ a.nav-cta.btn:focus,
   }
 
   .core-strength-card {
+
+  .navbar .about-dropdown-menu {
+    /* When the dropdown renders as a drawer on mobile, use a subtle themed surface */
+    background: linear-gradient(180deg, rgba(var(--color-primary-rgb), 0.04), rgba(var(--color-primary-rgb), 0.02));
+    border: 1px solid rgba(var(--color-black-rgb), 0.04);
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.35rem;
+  }
     padding: 1.5rem;
   }
 
@@ -837,6 +871,20 @@ a.nav-cta.btn:focus,
 }
 /* Mobile navbar adjustments: make menu a left-aligned vertical list and remove horizontal margins that cause indentation */
 @media (max-width: 767.98px) {
+  .navbar-collapse {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  }
+
+  .navbar-collapse.show {
+    max-height: 100vh;
+    opacity: 1;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
   .navbar-nav {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -852,7 +900,20 @@ a.nav-cta.btn:focus,
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding: 0.25rem 0;
+    animation: fadeInUp 0.3s ease forwards;
+    opacity: 0;
   }
+
+  .navbar-collapse.show .navbar-nav .nav-item {
+    opacity: 1;
+  }
+
+  .navbar-collapse.show .navbar-nav .nav-item:nth-child(1) { animation-delay: 0.05s; }
+  .navbar-collapse.show .navbar-nav .nav-item:nth-child(2) { animation-delay: 0.1s; }
+  .navbar-collapse.show .navbar-nav .nav-item:nth-child(3) { animation-delay: 0.15s; }
+  .navbar-collapse.show .navbar-nav .nav-item:nth-child(4) { animation-delay: 0.2s; }
+  .navbar-collapse.show .navbar-nav .nav-item:nth-child(5) { animation-delay: 0.25s; }
+  .navbar-collapse.show .navbar-nav .nav-item:nth-child(6) { animation-delay: 0.3s; }
 
   .navbar-nav .nav-link,
   .navbar-nav .dropdown-toggle,
@@ -880,6 +941,18 @@ a.nav-cta.btn:focus,
   }
 
   to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
 }

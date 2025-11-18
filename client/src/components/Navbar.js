@@ -138,11 +138,11 @@ const Navbar = () => {
                   >
                     About
                   </button>
-                  <ul className={`dropdown-menu${aboutOpen ? " show" : ""}`} style={{ background: "#02182b", border: "1px solid rgba(194,182,151,0.12)" }}>
+                  <ul className={`dropdown-menu about-dropdown-menu${aboutOpen ? " show" : ""}`}>
                     <li>
                       <Link
                         to="/about"
-                        className="dropdown-item"
+                        className={`dropdown-item${location.pathname === "/about" ? " active-dropdown" : ""}`}
                         onClick={() => {
                           setAboutOpen(false);
                           setMobileOpen(false);
@@ -151,7 +151,7 @@ const Navbar = () => {
                             try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0,0); }
                           }, 60);
                         }}
-                        style={{ color: location.pathname === "/about" ? "#c2b697" : "#fff", textDecoration: 'none' }}
+                        style={{ textDecoration: 'none' }}
                       >
                         Firm Overview
                       </Link>
@@ -159,9 +159,9 @@ const Navbar = () => {
                     <li>
                         <Link
                           to="/about#achievements"
-                          className="dropdown-item"
+                          className={`dropdown-item${(location.pathname === "/about" && location.hash === "#achievements") ? " active-dropdown" : ""}`}
                           onClick={() => { setAboutOpen(false); setMobileOpen(false); }}
-                          style={{ color: (location.pathname === "/about" && location.hash === "#achievements") ? "#c2b697" : "#fff", textDecoration: 'none' }}
+                          style={{ textDecoration: 'none' }}
                         >
                           Achievements
                         </Link>
