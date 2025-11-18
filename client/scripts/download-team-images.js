@@ -17,6 +17,11 @@ const images = [
     url: 'https://dejure.pk/wp-content/uploads/2024/01/nasrminallah-mian.jpg',
     filename: 'nasrminallah-mian.jpg'
   }
+  ,
+  {
+    url: 'https://dejure.pk/wp-content/uploads/2025/02/Screenshot-239.png',
+    filename: 'screenshot-239.png'
+  }
 ];
 
 const outputDir = path.join(__dirname, '..', 'public', 'assets', 'people');
