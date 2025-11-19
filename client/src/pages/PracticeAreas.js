@@ -119,12 +119,12 @@ const practiceAreaTopics = [
 
 const practiceVisuals = [
   {
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
-    alt: "Advisors collaborating in a boardroom",
+    src: "/assets/lawyer-at-work1.webp",
+    alt: "Lawyers collaborating at a desk",
   },
   {
-    src: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
-    alt: "Detail shot of legal documents with glasses",
+    src: "/assets/law-justice.webp",
+    alt: "Justice scales and law imagery",
   },
 ];
 
