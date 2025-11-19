@@ -77,7 +77,7 @@ const Navbar = () => {
               className="navbar-brand d-flex align-items-center text-decoration-none text-white"
             >
               <img
-              src="/assets/logo-dejure-main-graybg.png"
+              src="/assets/logo-dejure-maroon.svg"
               className="img-fluid logo-image"
               alt="De Jure Advocates & Legal Consultants logo"
               style={{ height: isSticky ? '64px' : '100px', width: 'auto', maxWidth: '490px', transition: 'height 240ms ease' }}

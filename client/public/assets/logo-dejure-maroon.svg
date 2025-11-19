@@ -1,0 +1,18 @@
+<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">De Jure Advocates &amp; Legal Consultants</title>
+  <desc id="desc">Logo with full maroon background identical to navbar color.</desc>
+
+  <!-- full background uses navbar maroon (#550909) -->
+  <rect width="520" height="200" fill="#550909" />
+
+  <!-- deep maroon block behind the wordmark -->
+  <rect x="60" y="30" width="220" height="120" fill="#3c0404" />
+
+  <!-- light panel for "Jure" -->
+  <rect x="230" y="48" width="230" height="110" fill="#f0eded" />
+
+  <!-- text -->
+  <text x="90" y="115" font-family="'Times New Roman', 'Georgia', serif" font-size="86" font-style="italic" fill="#f8f4f0">De</text>
+  <text x="250" y="135" font-family="'Times New Roman', 'Georgia', serif" font-size="100" fill="#141414" font-weight="600">Jure</text>
+  <text x="70" y="182" font-family="'Georgia', 'Times New Roman', serif" font-size="28" fill="#f8f4f0" letter-spacing="0.6">Advocates &amp; Legal Consultants</text>
+</svg>
