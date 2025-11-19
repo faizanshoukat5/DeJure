@@ -59,6 +59,42 @@ const OurTeam = () => {
           </p>
         </div>
       </section>
+      <section className="team-banner-section">
+        <div className="container">
+          <div className="team-banner-card shadow-lg">
+            <div className="team-banner-media">
+              <img
+                src="/assets/team-lawyers-banner.jpg"
+                alt="De Jure legal team - professional lawyers ready to serve"
+                className="img-fluid"
+                loading="lazy"
+              />
+            </div>
+            <div className="team-banner-content">
+              <p className="eyebrow text-uppercase mb-2">Fully integrated practice</p>
+              <h3 className="fw-bold mb-3">A multidisciplinary team aligned with your mandate</h3>
+              <p className="mb-4 text-muted">
+                From corporate strategy to courtroom advocacy, our lawyers share research, case intelligence, and
+                institutional memory so every client benefits from the collective strength of the firm.
+              </p>
+              <ul className="team-banner-highlights list-unstyled mb-0">
+                <li>
+                  <span className="stat">25+</span>
+                  <span className="label">Combined practice areas</span>
+                </li>
+                <li>
+                  <span className="stat">Across PK</span>
+                  <span className="label">Islamabad & Lahore teams</span>
+                </li>
+                <li>
+                  <span className="stat">Trusted</span>
+                  <span className="label">Regulatory & appellate forums</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="container py-5">
         <div className="row g-4">
           {people.map((p) => (

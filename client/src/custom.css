@@ -1419,6 +1419,107 @@ footer .bg-dark {
   letter-spacing: 0.03rem;
 }
 
+.team-banner-section {
+  background: linear-gradient(180deg, #fdfaf7 0%, #f5eee8 80%, #fff 100%);
+  padding: 3rem 0 2rem;
+}
+
+.team-banner-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0;
+}
+
+.team-banner-media {
+  flex: 1 1 50%;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px 0 0 24px;
+}
+
+.team-banner-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.team-banner-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(85, 9, 9, 0.82), rgba(28, 16, 12, 0.35) 55%, rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.team-banner-content {
+  flex: 1 1 50%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-banner-content .eyebrow {
+  letter-spacing: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.team-banner-content h3 {
+  font-size: clamp(1.8rem, 2.3vw, 2.4rem);
+}
+
+.team-banner-highlights {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.team-banner-highlights li {
+  flex: 1 1 140px;
+  background: rgba(194, 182, 151, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.team-banner-highlights .stat {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.team-banner-highlights .label {
+  font-size: 0.9rem;
+  color: rgba(34, 34, 34, 0.8);
+}
+
+@media (max-width: 992px) {
+  .team-banner-card {
+    flex-direction: column;
+    border-radius: 24px;
+  }
+
+  .team-banner-media {
+    border-radius: 24px 24px 0 0;
+  }
+
+  .team-banner-content {
+    padding: 2rem;
+  }
+}
+
 .team-member-bio {
   line-height: 1.7;
   color: #333;
