@@ -1,72 +1,61 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  const [status, setStatus] = useState("Send message");
+  const [status, setStatus] = useState("Send request");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [query, setQuery] = useState("");
 
-  const sendMail = () => {
-    const params = {
-      name,
-      email,
-      phone,
-      message: query,
-    };
-    const serviceID = process.env.REACT_APP_SERVICE_ID;
-    const templateID = process.env.REACT_APP_TEMPLATE_ID;
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_USER_ID;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("Opening email app...");
 
-    // Validate EmailJS env vars before calling the library to avoid the thrown error
-    if (!publicKey || !serviceID || !templateID) {
-      console.error("Missing EmailJS configuration. publicKey/serviceID/templateID required.");
-      setStatus("Send message");
-      alert(
-        "Contact form is not configured. Please set EmailJS keys in `client/.env`. See `client/.env.example` for required variables."
-      );
-      return;
+    const subject = `Consultation request from ${name || "De Jure website"}`;
+    const body = [
+      `Full name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      "",
+      "Summary:",
+      query,
+    ].join("\n");
+
+    const mailtoLink = `mailto:info@dejure.pk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (typeof window !== "undefined") {
+      window.location.href = mailtoLink;
     }
 
-    emailjs.send(serviceID, templateID, params, publicKey).then(
-      (response) => {
-  console.log("SUCCESS!", response.status, response.text);
-  setStatus("Send message");
-  alert("Thank you. A DeJure team member will contact you shortly.");
-
-        // Clear input fields after successful submission
-        setName("");
-        setEmail("");
-        setPhone("");
-        setQuery("");
-      },
-      (error) => {
-  console.log("FAILED...", error);
-  setStatus("Send message");
-  alert("We could not send your message. Please retry or email info@dejure.pk.");
-      }
-    );
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
-    sendMail();
+    setTimeout(() => {
+      setStatus("Send request");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setQuery("");
+    }, 1500);
   };
 
   return (
-    <div className="form-wrap p-5 mb-5">
-      <div className="form-overlay"></div>
-      <div className="contact-form text-center">
-        <p className="lead text-light">Request a DeJure consultation</p>
-      </div>
-      <div className="row justify-content-center ">
-        <div className="col-lg-12">
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="name" className="form-label text-light">
-              Full name:
+    <div className="form-wrap p-4 p-md-5 mb-5">
+      <div className="contact-form-card">
+        <div className="consultation-form-header text-center">
+          <p className="eyebrow text-uppercase mb-2">Request a DeJure consultation</p>
+          <h3>Brief the team in minutes</h3>
+          <p className="helper-text">
+            Complete the intake form and your message will open in your preferred email client addressed to <strong>info@dejure.pk</strong>.
+            Include timelines, regulators, and counterparties so partners can prepare.
+          </p>
+          <ul className="contact-form-guidance">
+            <li>Use your corporate email if you already have an engagement with us.</li>
+            <li>Mention any filing deadlines or upcoming hearings.</li>
+            <li>Attach supporting PDFs once your email client launches.</li>
+          </ul>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <div className="form-field-group">
+            <label htmlFor="name" className="form-label">
+              Full name <span className="required-indicator">*</span>
             </label>
             <input
               type="text"
@@ -74,10 +63,15 @@ const ContactForm = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="form-control"
+              placeholder="e.g. Your full name"
+              autoComplete="name"
               required
             />
-            <label htmlFor="email" className="form-label text-light pt-2">
-              Email address:
+          </div>
+
+          <div className="form-field-group">
+            <label htmlFor="email" className="form-label">
+              Email address <span className="required-indicator">*</span>
             </label>
             <input
               type="email"
@@ -85,10 +79,15 @@ const ContactForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
+              placeholder="name@company.com"
+              autoComplete="email"
               required
             />
-            <label htmlFor="phone" className="form-label text-light pt-2">
-              Phone number:
+          </div>
+
+          <div className="form-field-group">
+            <label htmlFor="phone" className="form-label">
+              Phone number <span className="required-indicator">*</span>
             </label>
             <input
               type="tel"
@@ -96,31 +95,36 @@ const ContactForm = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="form-control"
+              placeholder="+92 300 0000000"
+              autoComplete="tel"
               required
             />
-            <div>
-              <label htmlFor="query" className="form-label text-light pt-2">
-                How can we help?
+          </div>
+
+          <div className="form-field-group">
+            <div className="label-stack">
+              <label htmlFor="query" className="form-label">
+                How can we help? <span className="required-indicator">*</span>
               </label>
-              <textarea
-                className="form-control"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                id="query"
-                required
-              ></textarea>
+              <span className="field-hint">Share the forum, counterparties, deadlines, and goals.</span>
             </div>
-            <div className="my-4 text-center pt-2">
-              <button
-                type="submit"
-                className="btn btn-outline-dark"
-                aria-label="Send message"
-              >
-                {status}
-              </button>
-            </div>
-          </form>
-        </div>
+            <textarea
+              className="form-control"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              id="query"
+              rows={5}
+              placeholder="Outline the dispute, transaction, or regulatory matter."
+              required
+            ></textarea>
+          </div>
+
+          <div className="text-center pt-3">
+            <button type="submit" className="btn btn-primary contact-form-btn" aria-label="Send consultation request">
+              {status}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
