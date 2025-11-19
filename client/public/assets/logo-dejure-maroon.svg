@@ -14,5 +14,5 @@
   <!-- text -->
   <text x="90" y="115" font-family="'Times New Roman', 'Georgia', serif" font-size="86" font-style="italic" fill="#f8f4f0">De</text>
   <text x="250" y="135" font-family="'Times New Roman', 'Georgia', serif" font-size="100" fill="#141414" font-weight="600">Jure</text>
-  <text x="70" y="182" font-family="'Georgia', 'Times New Roman', serif" font-size="28" fill="#f8f4f0" letter-spacing="0.6">Advocates &amp; Legal Consultants</text>
+  <text x="65" y="182" font-family="'Georgia', 'Times New Roman', serif" font-size="28" fill="#f8f4f0" letter-spacing="0.6">Advocates &amp; Legal Consultants</text>
 </svg>
