@@ -1185,7 +1185,7 @@ footer .bg-dark {
 }
 
 #horizontal1:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-primary-dark);
   color: var(--color-neutral-100);
 }
 #small {
@@ -1194,28 +1194,25 @@ footer .bg-dark {
 }
 
 #small:hover {
-  background-color: var(--color-accent);
-  color: var(--color-neutral-100);
-}
-
-.horizontal-btn .btn {
-  background-color: var(--color-accent);
-  color: var(--color-neutral-100);
-}
-
-.horizontal-btn .btn:hover {
   background-color: var(--color-primary-dark);
   color: var(--color-neutral-100);
 }
 
-.mobile-btn .btn {
-  background-color: var(--color-accent);
+.home-page .type-button,
+.home-page .btn-outline-dark {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: var(--color-neutral-100);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.mobile-btn .btn:hover {
+.home-page .type-button:hover,
+.home-page .btn-outline-dark:hover {
   background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
   color: var(--color-neutral-100);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
 }
 
 /* end buttons===== */
