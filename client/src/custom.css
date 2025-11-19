@@ -1395,6 +1395,24 @@ footer .bg-dark {
   object-fit: cover;
 }
 
+/* Placeholder shown while team member images load or when they fail */
+.team-member-placeholder {
+  width: 60%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  background-image: url('./assets/team-placeholder.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
 .team-member-body .subtitle {
   color: var(--color-accent);
   font-size: 1.05rem;

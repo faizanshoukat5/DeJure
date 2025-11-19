@@ -2,6 +2,38 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import people from "../data/people.json";
 
+// Small image component that shows a centered placeholder while the
+// real image loads (or if it fails). Keeps layout stable across team items.
+const ImageWithPlaceholder = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [errored, setErrored] = useState(false);
+
+  return (
+    <div className="team-member-image-wrapper">
+      {!loaded || errored ? (
+        <div className="team-member-placeholder" aria-hidden="true" />
+      ) : null}
+      <img
+        src={src}
+        alt={alt}
+        className="team-member-image"
+        loading="lazy"
+        style={{ display: loaded && !errored ? "block" : "none" }}
+        onLoad={() => {
+          setLoaded(true);
+          setErrored(false);
+        }}
+        onError={(e) => {
+          // attempt to show a local fallback; the onLoad handler will
+          // set `loaded` when the fallback finishes loading
+          setErrored(true);
+          if (e?.target) e.target.src = "/assets/LOGO2.png";
+        }}
+      />
+    </div>
+  );
+};
+
 const OurTeam = () => {
   const [expandedBio, setExpandedBio] = useState(null);
 
@@ -34,19 +66,10 @@ const OurTeam = () => {
               <div className="team-member-card shadow-sm">
                 <div className="row g-0">
                   <div className="col-md-3">
-                    <div className="team-member-image-wrapper">
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        className="team-member-image"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.target.src = "/assets/LOGO2.png";
-                          e.target.style.objectFit = "contain";
-                          e.target.style.padding = "2rem";
-                        }}
-                      />
-                    </div>
+                    {/* Image area: use the ImageWithPlaceholder component so a
+                        visible placeholder keeps layout stable while images load
+                        or if they fail to load. */}
+                    <ImageWithPlaceholder src={p.image} alt={p.name} />
                   </div>
                   <div className="col-md-9">
                     <div className="team-member-body p-4">
