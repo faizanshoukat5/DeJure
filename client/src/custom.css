@@ -920,9 +920,15 @@ a.nav-cta.btn:focus,
   .navbar-nav .dropdown-item {
     display: block;
     width: 100%;
-    padding-left: 0.25rem;
+    padding-left: 0 !important;
     padding-right: 0.25rem;
     text-align: left;
+    margin-left: 0 !important;
+  }
+
+  /* Normalize font weight for consistent alignment in mobile menu */
+  .navbar-nav .nav-link {
+    font-weight: 600 !important;
   }
 
   /* ensure dropdown items are indented slightly under their parent for clarity */

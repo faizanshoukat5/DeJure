@@ -7,7 +7,7 @@ import {
   faPhone,
   faEnvelope,
   faLocationDot,
-  faClock,
+  
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Contact = () => {
@@ -42,22 +42,8 @@ export const Contact = () => {
                   <p className="mb-0">Lahore - 36-C FCC, Gulberg IV</p>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6 col-12 border-end border-1">
-                <div className="contact-inner">
-                  <div className="info-i">
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faClock}
-                        size="2x"
-                        className="law-icon pb-3"
-                      />
-                    </span>
-                  </div>
-                  <h5>Office hours:</h5>
-                  <p>Monday - Friday: 9 AM - 6 PM</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-12 border-end border-1">
+              
+              <div className="col-lg-4 col-md-6 col-12 border-end border-1">
                 <div className="contact-inner">
                   <div className="info-i">
                     <span>
@@ -72,7 +58,7 @@ export const Contact = () => {
                   <p>info@dejure.pk</p>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6 col-12">
+              <div className="col-lg-4 col-md-6 col-12">
                 <div className="contact-inner">
                   <div className="info-i">
                     <span>

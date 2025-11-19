@@ -252,7 +252,7 @@ const PracticeAreas = ({ focusTarget }) => {
                     key={src}
                     className={`practice-visual practice-visual-${index}`}
                   >
-                    <img src={src} alt={alt} loading="lazy" />
+                    <img src={src} alt={alt} loading="eager" fetchpriority="high" />
                   </figure>
                 ))}
               </div>
