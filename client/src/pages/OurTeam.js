@@ -44,13 +44,26 @@ const cultureHighlights = [
 
 const heroImage = "/assets/team-lawyers-banner.jpg";
 
+const truncateText = (text = "", limit = 240) => {
+  if (!text) return "";
+  return text.length > limit ? `${text.slice(0, limit).trim()}…` : text;
+};
+
 const OurTeam = () => {
   const [expandedBio, setExpandedBio] = useState(null);
+  const [expandedLeadership, setExpandedLeadership] = useState({});
   const leadership = people.slice(0, 3);
   const broaderTeam = people.slice(3);
 
   const toggleBio = (name) => {
     setExpandedBio(expandedBio === name ? null : name);
+  };
+
+  const toggleLeadership = (name) => {
+    setExpandedLeadership((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }));
   };
 
   return (
@@ -125,23 +138,41 @@ const OurTeam = () => {
             </p>
           </div>
           <div className="row g-4">
-            {leadership.map((leader) => (
-              <div className="col-12" key={leader.name}>
-                <div className="leadership-feature-card">
-                  <ImageWithPlaceholder
-                    src={leader.image}
-                    alt={leader.name}
-                    className="leadership-feature-image"
-                  />
-                  <div className="leadership-feature-body">
-                    <div className="role-label">{leader.title}</div>
-                    <h3>{leader.name}</h3>
-                    <p className="leadership-snippet mb-3">{leader.bio}</p>
-                    {leader.fullBio && <p className="text-muted">{leader.fullBio}</p>}
+            {leadership.map((leader, index) => {
+              const shouldClampBio = index === 0 && leader.bio && leader.bio.length > 260;
+              const shouldClampFullBio = index === 1 && !!leader.fullBio;
+              const allowToggle = shouldClampBio || shouldClampFullBio;
+              const isExpanded = !!expandedLeadership[leader.name];
+              return (
+                <div className="col-12" key={leader.name}>
+                  <div className="leadership-feature-card">
+                    <ImageWithPlaceholder
+                      src={leader.image}
+                      alt={leader.name}
+                      className="leadership-feature-image"
+                    />
+                    <div className="leadership-feature-body">
+                      <div className="role-label">{leader.title}</div>
+                      <h3>{leader.name}</h3>
+                      <p className="leadership-snippet mb-3">
+                        {shouldClampBio && !isExpanded ? truncateText(leader.bio, 260) : leader.bio}
+                      </p>
+                      {leader.fullBio && shouldClampFullBio && (
+                        <p className={`text-muted ${!isExpanded ? "line-clamp-2" : ""}`}>{leader.fullBio}</p>
+                      )}
+                      {leader.fullBio && !shouldClampFullBio && (isExpanded || !shouldClampBio) && (
+                        <p className="text-muted">{leader.fullBio}</p>
+                      )}
+                      {allowToggle && (
+                        <button className="text-link" onClick={() => toggleLeadership(leader.name)}>
+                          {isExpanded ? "Show less" : "Read more"}
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
