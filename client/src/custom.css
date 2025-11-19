@@ -802,20 +802,6 @@ a.nav-cta.btn:focus,
   display: block;
 }
 
-/* Reduce layout shift by reserving aspect ratio for practice visuals */
-.practice-visual img {
-  aspect-ratio: 16 / 9;
-  min-height: 160px;
-}
-
-/* Improve image decoding and rendering performance */
-.practice-visual img,
-.team-member-image,
-.logo-image {
-  image-rendering: optimizeQuality;
-  will-change: transform;
-}
-
 .practice-visual-0 {
   top: 0;
   right: 0;
