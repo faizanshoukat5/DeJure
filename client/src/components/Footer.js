@@ -117,10 +117,11 @@ const Footer = () => {
           </div>
           <div className="row g-4 pt-4">
             <div className="col-md-6">
+              <h6 className="mb-2">Islamabad</h6>
               <div className="map-embed map-embed-footer shadow-sm">
                 <iframe
                   src="https://www.google.com/maps?q=House+8,+Street+38,+F-6/1,+Islamabad,+Pakistan&output=embed"
-                  title="De Jure Advocates & Legal Consultants Islamabad Office on Google Maps"
+                  title="DeJure Advocates & Legal Consultants Islamabad Office on Google Maps"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
@@ -128,10 +129,11 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-6">
+              <h6 className="mb-2">Lahore</h6>
               <div className="map-embed map-embed-footer shadow-sm">
                 <iframe
                   src="https://www.google.com/maps?q=36-C+FCC,+Gulberg+IV,+Lahore,+Pakistan&output=embed"
-                  title="De Jure Advocates & Legal Consultants Lahore Office on Google Maps"
+                  title="DeJure Advocates & Legal Consultants Lahore Office on Google Maps"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
