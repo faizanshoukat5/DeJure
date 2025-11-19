@@ -20,7 +20,7 @@ const TopBanner = ({ isCompact = false }) => {
             <span className={isCompact ? 'd-none d-lg-inline' : ''}>Islamabad & Lahore, Pakistan</span>
             <span className={isCompact ? 'd-inline d-lg-none' : 'd-none'}>ISB & LHR</span>
           </div>
-          <div className={`col col-md-4 col-sm-12 text-center mb-md-0 ${isCompact ? 'd-none d-md-block' : ''}`}>
+          <div className={`col col-md-4 col-sm-12 text-center mb-md-0`}>
             <FontAwesomeIcon
               icon={faEnvelope}
               className="banner-icon pe-2"
