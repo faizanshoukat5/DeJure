@@ -32,6 +32,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "qa": "playwright test",
     "eject": "react-scripts eject",
     "fetch:people": "node scripts/fetch-people.js",
     "download:images": "node scripts/download-team-images.js"
@@ -56,6 +57,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.21.11",
+    "@playwright/test": "^1.56.1",
     "sharp": "^0.34.5"
   }
 }

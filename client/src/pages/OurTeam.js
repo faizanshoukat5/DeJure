@@ -2,17 +2,13 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import people from "../data/people.json";
 
-// Small image component that shows a centered placeholder while the
-// real image loads (or if it fails). Keeps layout stable across team items.
-const ImageWithPlaceholder = ({ src, alt }) => {
+const ImageWithPlaceholder = ({ src, alt, className = "" }) => {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
 
   return (
-    <div className="team-member-image-wrapper">
-      {!loaded || errored ? (
-        <div className="team-member-placeholder" aria-hidden="true" />
-      ) : null}
+    <div className={`team-member-image-wrapper ${className}`}>
+      {!loaded || errored ? <div className="team-member-placeholder" aria-hidden="true" /> : null}
       <img
         src={src}
         alt={alt}
@@ -24,8 +20,6 @@ const ImageWithPlaceholder = ({ src, alt }) => {
           setErrored(false);
         }}
         onError={(e) => {
-          // attempt to show a local fallback; the onLoad handler will
-          // set `loaded` when the fallback finishes loading
           setErrored(true);
           if (e?.target) e.target.src = "/assets/LOGO2.png";
         }}
@@ -34,8 +28,26 @@ const ImageWithPlaceholder = ({ src, alt }) => {
   );
 };
 
+const stats = [
+  { value: "40+", label: "Years guiding corporate, tax & litigation" },
+  { value: "2 cities", label: "Integrated Islamabad & Lahore teams" },
+  { value: "11+ forums", label: "From tribunals to Supreme Court" },
+  { value: "24/7", label: "Research desk backing every mandate" },
+];
+
+const cultureHighlights = [
+  "One-team approach between advisory and disputes",
+  "Live matter rooms that surface research for every lawyer",
+  "Partner-led mentorship for each practice pod",
+  "Modern knowledge base spanning regulations & precedents",
+];
+
+const heroImage = "/assets/team-lawyers-banner.jpg";
+
 const OurTeam = () => {
   const [expandedBio, setExpandedBio] = useState(null);
+  const leadership = people.slice(0, 3);
+  const broaderTeam = people.slice(3);
 
   const toggleBio = (name) => {
     setExpandedBio(expandedBio === name ? null : name);
@@ -47,95 +59,157 @@ const OurTeam = () => {
         <title>Our Team | De Jure Advocates & Legal Consultants</title>
         <meta
           name="description"
-          content="Meet the leadership, partners, and consultants who guide De Jure Advocates & Legal Consultants' corporate, tax, and dispute mandates across Pakistan."
+          content="Explore the multidisciplinary lawyers leading De Jure Advocates & Legal Consultants across corporate, tax, restructuring, and dispute mandates."
         />
       </Helmet>
-      <section className="py-5" style={{ backgroundColor: "#f8f9fa" }}>
+
+      <section className="team-hero">
+        <div
+          className="team-hero-backdrop"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `linear-gradient(130deg, rgba(17, 9, 6, 0.9), rgba(17, 9, 6, 0.55)), url(${heroImage})`,
+          }}
+        ></div>
         <div className="container">
-          <h6 className="guide-text text-uppercase ms-3">Our Team</h6>
-          <h2 className="fw-bold pb-2 text-center">Leadership committed to client success</h2>
-          <p className="text-center pb-4 text-muted">
-            Our team combines deep legal expertise with practical business insight to deliver exceptional results.
-          </p>
-        </div>
-      </section>
-      <section className="team-banner-section">
-        <div className="container">
-          <div className="team-banner-card shadow-lg">
-            <div className="team-banner-media">
-              <img
-                src="/assets/team-lawyers-banner.jpg"
-                alt="De Jure legal team - professional lawyers ready to serve"
-                className="img-fluid"
-                loading="lazy"
-              />
-            </div>
-            <div className="team-banner-content">
-              <p className="eyebrow text-uppercase mb-2">Fully integrated practice</p>
-              <h3 className="fw-bold mb-3">A multidisciplinary team aligned with your mandate</h3>
-              <p className="mb-4 text-muted">
-                From corporate strategy to courtroom advocacy, our lawyers share research, case intelligence, and
-                institutional memory so every client benefits from the collective strength of the firm.
-              </p>
-              <ul className="team-banner-highlights list-unstyled mb-0">
-                <li>
-                  <span className="stat">25+</span>
-                  <span className="label">Combined practice areas</span>
-                </li>
-                <li>
-                  <span className="stat">Across PK</span>
-                  <span className="label">Islamabad & Lahore teams</span>
-                </li>
-                <li>
-                  <span className="stat">Trusted</span>
-                  <span className="label">Regulatory & appellate forums</span>
-                </li>
-              </ul>
+          <div className="row">
+            <div className="col-lg-7 col-xl-6">
+              <div className="team-hero-panel">
+                <p className="team-hero-eyebrow text-uppercase mb-3">De Jure Advocates & Legal Consultants</p>
+                <h1 className="team-hero-title">A litigation-first firm with boardroom instincts</h1>
+                <p className="team-hero-copy">
+                  We pair Supreme Court advocates, barristers, and sector specialists to defend your position at every
+                  forum. Each matter is supported by a research desk, playbooks, and collaboration rituals so tactical
+                  decisions stay aligned with your long-term objectives.
+                </p>
+                <div className="team-hero-cta">
+                  <a href="/contact" className="btn btn-light me-3">
+                    Book a strategy call
+                  </a>
+                </div>
+                <div className="team-hero-meta">
+                  <span>Trusted by listed companies, banks, and public bodies</span>
+                  <span>ISO-like knowledge systems • Confidentiality by design</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <div className="container py-5">
-        <div className="row g-4">
-          {people.map((p) => (
-            <div className="col-lg-12" key={p.name}>
-              <div className="team-member-card shadow-sm">
-                <div className="row g-0">
-                  <div className="col-md-3">
-                    {/* Image area: use the ImageWithPlaceholder component so a
-                        visible placeholder keeps layout stable while images load
-                        or if they fail to load. */}
-                    <ImageWithPlaceholder src={p.image} alt={p.name} />
-                  </div>
-                  <div className="col-md-9">
-                    <div className="team-member-body p-4">
-                      <h4 className="fw-bold mb-1">{p.name}</h4>
-                      <p className="subtitle fw-semibold mb-3">{p.title}</p>
-                      <div className="team-member-bio">
-                        <p className="mb-2">{p.bio}</p>
-                        {p.fullBio && (
-                          <>
-                            {expandedBio === p.name && (
-                              <p className="mb-2 text-muted">{p.fullBio}</p>
-                            )}
-                            <button
-                              className="btn btn-link p-0 text-decoration-none"
-                              onClick={() => toggleBio(p.name)}
-                              style={{ color: "#c2b697", fontWeight: "500" }}
-                            >
-                              {expandedBio === p.name ? "Show Less ▲" : "Read More ▼"}
-                            </button>
-                          </>
-                        )}
-                      </div>
-                    </div>
+
+      <section className="team-stats">
+        <div className="container">
+          <div className="row row-cols-2 row-cols-md-4 g-3 g-lg-4">
+            {stats.map((item) => (
+              <div className="col" key={item.label}>
+                <div className="team-stat-card">
+                  <span className="value">{item.value}</span>
+                  <span className="label">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="team-leadership">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow text-uppercase mb-2">Leadership Council</p>
+              <h2>Hands-on partners leading every mandate</h2>
+            </div>
+            <p className="heading-copy">
+              Our partners deploy cross-functional teams that blend courtroom experience with sector knowledge,
+              ensuring strategic continuity from advisory to enforcement.
+            </p>
+          </div>
+          <div className="row g-4">
+            {leadership.map((leader) => (
+              <div className="col-12" key={leader.name}>
+                <div className="leadership-feature-card">
+                  <ImageWithPlaceholder
+                    src={leader.image}
+                    alt={leader.name}
+                    className="leadership-feature-image"
+                  />
+                  <div className="leadership-feature-body">
+                    <div className="role-label">{leader.title}</div>
+                    <h3>{leader.name}</h3>
+                    <p className="leadership-snippet mb-3">{leader.bio}</p>
+                    {leader.fullBio && <p className="text-muted">{leader.fullBio}</p>}
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section className="team-grid-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow text-uppercase mb-2">Specialists & Counsel</p>
+              <h2>Multidisciplinary bench strength</h2>
+            </div>
+            <p className="heading-copy">
+              Tax litigators, restructuring experts, and commercial advisors collaborate inside pods so knowledge flows
+              freely and filings remain precise.
+            </p>
+          </div>
+          <div className="row g-4">
+            {broaderTeam.map((member) => (
+              <div className="col-lg-6" key={member.name}>
+                <div className={`team-grid-card ${expandedBio === member.name ? "expanded" : ""}`}>
+                  <ImageWithPlaceholder src={member.image} alt={member.name} className="grid-image" />
+                  <div className="team-grid-card-body">
+                    <div className="role-label">{member.title}</div>
+                    <h4>{member.name}</h4>
+                    <p>{member.bio}</p>
+                    {member.fullBio && expandedBio === member.name && (
+                      <p className="text-muted small mb-0">{member.fullBio}</p>
+                    )}
+                    {member.fullBio && (
+                      <button className="text-link" onClick={() => toggleBio(member.name)}>
+                        {expandedBio === member.name ? "Show less" : "Read more"}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="team-culture">
+        <div className="container">
+          <div className="team-culture-card">
+            <div>
+              <p className="eyebrow text-uppercase mb-2">Culture & Delivery</p>
+              <h3>We operate like an internal legal department</h3>
+              <p className="mb-4">
+                Engagements are run on sprints, with digital dashboards and accessible partners. That structure keeps
+                multijurisdictional filings synchronized while allowing clients direct access to the lawyers doing the
+                thinking.
+              </p>
+              <ul className="culture-list">
+                {cultureHighlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="team-culture-cta">
+              <h4>Need a rapid-response team?</h4>
+              <p className="mb-4">Email info@dejure.pk or request a call below and we will assemble the right mix of lawyers within hours.</p>
+              <a href="/contact" className="btn btn-primary">
+                Meet the team →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
