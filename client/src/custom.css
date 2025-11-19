@@ -211,6 +211,7 @@ a.nav-cta.btn:focus,
   box-shadow: 0 6px 16px rgba(var(--color-black-rgb), 0.08) !important;
 }
 
+
 .nav-sticky {
   position: fixed;
   top: 0;
@@ -537,6 +538,41 @@ a.nav-cta.btn:focus,
 
 .nav-cta:hover {
   transform: translateY(-2px);
+}
+
+.navbar .nav-cta.btn,
+.navbar a.nav-cta.btn,
+.navbar .nav-item .nav-cta.btn {
+  position: relative;
+  isolation: isolate;
+}
+
+.navbar .nav-cta.btn::after,
+.navbar a.nav-cta.btn::after,
+.navbar .nav-item .nav-cta.btn::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  display: block;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(var(--color-accent), 0.65), rgba(var(--color-primary-rgb), 0));
+  opacity: 0.6;
+  filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
+  animation: navCtaGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes navCtaGlow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .expertise-card {
@@ -1745,6 +1781,178 @@ footer .bg-dark {
 .square:hover {
   background-color: var(--color-primary-dark);
 }
+/* CAREERS PAGE ====================== */
+.careers-page {
+  background: #fbf7f2;
+  color: var(--color-text-base);
+}
+
+.careers-section {
+  padding: 4rem 0;
+}
+
+.careers-hero {
+  position: relative;
+  color: #fff;
+  padding: 5rem 0;
+  background-image: url("/public/assets/hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.careers-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(13, 9, 7, 0.9), rgba(85, 9, 9, 0.65));
+}
+
+.careers-highlight-panel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.careers-highlight-panel h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.careers-hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.careers-value-card,
+.development-track-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 50px rgba(27, 19, 16, 0.07);
+  height: 100%;
+}
+
+.careers-value-card h5,
+.development-track-card h5 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.careers-role-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f5ece3 100%);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(85, 9, 9, 0.08);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.role-practice {
+  color: rgba(85, 9, 9, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+}
+
+.careers-role-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(17, 9, 6, 0.8);
+}
+
+.hiring-step {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.8rem;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.hiring-step-number {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.benefits-card,
+.faq-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.07);
+  height: 100%;
+}
+
+.benefits-card ul {
+  margin: 1.25rem 0 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.benefits-card li {
+  line-height: 1.5;
+}
+
+.faq-item + .faq-item {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.careers-cta-panel {
+  background: linear-gradient(135deg, #3d0404, #821616);
+  color: #fff;
+  border-radius: 28px;
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.careers-cta-panel .btn-primary {
+  background: #fff;
+  border: none;
+  color: #3d0404;
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+}
+
+@media (max-width: 991px) {
+  .careers-hero {
+    text-align: left;
+  }
+
+  .careers-role-card,
+  .careers-cta-panel {
+    padding: 1.5rem;
+  }
+}
+
 /* AVOCATURA====================== */
 .avocatura {
   font-size: 0.8rem;
