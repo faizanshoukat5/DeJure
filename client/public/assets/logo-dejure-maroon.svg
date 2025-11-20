@@ -1,18 +1,18 @@
-<svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="520" height="230" viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">De Jure Advocates &amp; Legal Consultants</title>
   <desc id="desc">Logo with full maroon background identical to navbar color.</desc>
 
   <!-- full background uses navbar maroon (#550909) -->
-  <rect width="520" height="200" fill="#550909" />
+  <rect width="520" height="230" fill="#550909" />
 
-  <!-- deep maroon block behind the wordmark -->
-  <rect x="60" y="30" width="220" height="120" fill="#3c0404" />
+  <!-- deep maroon block anchors the left segment and overlaps above the light panel -->
+  <rect x="40" y="30" width="395" height="155" fill="#3c0404" />
 
-  <!-- light panel for "Jure" -->
-  <rect x="230" y="48" width="230" height="110" fill="#f0eded" />
+  <!-- light panel for "Jure" aligns bottom edge with dark block -->
+  <rect x="210" y="65" width="250" height="120" fill="#f0eded" />
 
   <!-- text -->
-  <text x="90" y="115" font-family="'Times New Roman', 'Georgia', serif" font-size="86" font-style="italic" fill="#f8f4f0">De</text>
-  <text x="250" y="135" font-family="'Times New Roman', 'Georgia', serif" font-size="100" fill="#141414" font-weight="600">Jure</text>
-  <text x="65" y="182" font-family="'Georgia', 'Times New Roman', serif" font-size="28" fill="#f8f4f0" letter-spacing="0.6">Advocates &amp; Legal Consultants</text>
+  <text x="85" y="145" font-family="'Times New Roman', 'Georgia', serif" font-size="90" font-style="italic" fill="#f8f4f0">De</text>
+  <text x="230" y="145" font-family="'Times New Roman', 'Georgia', serif" font-size="108" fill="#141414" font-weight="600">Jure</text>
+  <text x="250" y="215" font-family="'Georgia', 'Times New Roman', serif" font-size="30" fill="#f8f4f0" letter-spacing="0.6" text-anchor="middle">Advocates &amp; Legal Consultants</text>
 </svg>
