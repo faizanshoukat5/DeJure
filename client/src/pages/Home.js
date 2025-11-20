@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarCheck,
-  faFileCircleCheck,
   faCommentsDollar,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -58,20 +57,7 @@ const Home = () => {
                   </Link>
                 </div>
                 <div className="col flex-grow-1">
-                  <Link to="/contact">
-                    <button
-                      className="btn btn-lg btn-outline-dark type-button p-4 w-100 fw-bold"
-                      aria-label="Request case review"
-                    >
-                      <span className="p-3">
-                        <FontAwesomeIcon icon={faFileCircleCheck} size="1x" />
-                      </span>
-                      Schedule strategy call
-                    </button>
-                  </Link>
-                </div>
-                <div className="col flex-grow-1">
-                  <Link to="/about">
+                  <Link to="/our-team">
                     <button
                       className="btn btn-lg btn-outline-dark type-button p-4 w-100 fw-bold"
                       aria-label="View fees"
@@ -99,18 +85,7 @@ const Home = () => {
                   Book consultation
                 </button>
               </Link>
-              <Link to="/contact">
-                <button
-                  className="btn btn-outline-dark type-button p-2 mb-1 btn-md me-1"
-                  aria-label="Request case review"
-                >
-                  <span className="p-3">
-                    <FontAwesomeIcon icon={faFileCircleCheck} size="1x" />
-                  </span>
-                  Schedule call
-                </button>
-              </Link>
-              <Link to="/about">
+              <Link to="/our-team">
                 <button
                   className="btn btn-outline-dark type-button p-2 btn-md"
                   aria-label="View fees"
