@@ -44,14 +44,7 @@ const developmentTracks = [
     title: "Graduate associates",
     copy: "ACL and LL.B. graduates rotate through corporate, tax, and litigation pods with quarterly feedback loops.",
   },
-  {
-    title: "Mid-career lateral",
-    copy: "Experienced lawyers join as matter leads, backed by playbooks, client councils, and direct partner sponsorship.",
-  },
-  {
-    title: "Fellows & interns",
-    copy: "Research-focused roles contribute to knowledge dashboards, comparative studies, and regulatory trackers.",
-  },
+
 ];
 
 const benefits = [
@@ -189,18 +182,7 @@ const Careers = () => {
 
       <section className="careers-section container">
         <div className="row g-4">
-          <div className="col-lg-6">
-            <div className="benefits-card">
-              <p className="eyebrow text-uppercase mb-2">Benefits & Support</p>
-              <h3>Designed for long-game careers</h3>
-              <ul>
-                {benefits.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <div className="faq-card">
               <p className="eyebrow text-uppercase mb-2">FAQs</p>
               {faqs.map((faq) => (
