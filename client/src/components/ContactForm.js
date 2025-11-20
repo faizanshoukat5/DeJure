@@ -11,7 +11,7 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus("Opening email app...");
 
-    const subject = `Consultation request from ${name || "De Jure website"}`;
+    const subject = `Consultation request from ${name || "DeJure website"}`;
     const body = [
       `Full name: ${name}`,
       `Email: ${email}`,

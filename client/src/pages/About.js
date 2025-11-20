@@ -157,17 +157,23 @@ const About = () => {
               <div className="card shadow-sm border-0">
                 <div className="card-body p-4">
                   <h5 className="fw-bold pb-3">Our Promise</h5>
-                  <p>
-                    DeJure is committed to delivering cost-effective and
-                    time-efficient services without compromising depth. We keep
-                    communication transparent, ensure senior attention on every
-                    matter, and stay ahead of regulatory change so clients can
-                    focus on growth.
-                  </p>
-                  <p className="mb-0">
-                    Connect with us to learn how our integrated team can support
-                    your next transaction, policy initiative, or dispute.
-                  </p>
+                  <div className="text-separator" style={{textAlign: 'justify', textJustify: 'inter-word', hyphens: 'auto'}}>
+                    <p>
+                      DeJure is committed to delivering cost-effective,
+                      time-efficient legal services without compromising
+                      analytical depth. Our partners provide senior oversight
+                      and practical counsel on every matter, supported by
+                      focused preparation so clients receive timely, high-
+                      quality advice.
+                    </p>
+                    <p className="mb-0">
+                      We keep communication clear, prioritise workable
+                      solutions, and monitor regulatory change so clients can
+                      focus on growth. Connect with us to learn how our
+                      integrated team can support your next transaction,
+                      policy initiative, or dispute.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

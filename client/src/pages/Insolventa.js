@@ -7,10 +7,10 @@ const Insolventa = () => {
     <>
       <div className="insolventa-page">
         <Helmet>
-          <title>Core Strengths | De Jure Advocates & Legal Consultants</title>
+          <title>Core Strengths | DeJure Advocates & Legal Consultants</title>
           <meta
             name="description"
-            content="Explore De Jure Advocates & Legal Consultants' core strengths across taxation, corporate law, disputes, finance, arbitration, and trade."
+            content="Explore DeJure Advocates & Legal Consultants' core strengths across taxation, corporate law, disputes, finance, arbitration, and trade."
           />
         </Helmet>
         <div>
@@ -20,7 +20,7 @@ const Insolventa = () => {
               Specialist teams for complex mandates
             </h5>
             <h6 className="fw-bold subtitle lh-lg text-center px-5 pb-5">
-              De Jure Advocates & Legal Consultants brings deep experience to
+              DeJure Advocates & Legal Consultants brings deep experience to
               matters spanning taxation, corporate law, litigation, financial
               services, arbitration, and trade.
             </h6>

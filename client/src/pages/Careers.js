@@ -112,10 +112,10 @@ const Careers = () => {
   return (
     <div className="careers-page">
       <Helmet>
-        <title>Careers | De Jure Advocates & Legal Consultants</title>
+        <title>Careers | DeJure Advocates & Legal Consultants</title>
         <meta
           name="description"
-          content="Discover careers at De Jure Advocates & Legal Consultants. Explore open roles, mentorship culture, hiring process, and how to apply."
+          content="Discover careers at DeJure Advocates & Legal Consultants. Explore open roles, mentorship culture, hiring process, and how to apply."
         />
       </Helmet>
 
@@ -127,7 +127,7 @@ const Careers = () => {
               <p className="eyebrow text-uppercase mb-3">Careers</p>
               <h1>Shape the mandates that move Pakistan's boardrooms</h1>
               <p className="lead">
-                De Jure is a litigation-first firm with corporate instincts. We build teams who think like strategists, draft
+                DeJure is a litigation-first firm with corporate instincts. We build teams who think like strategists, draft
                 like policy experts, and advocate with conviction across tribunals to the Supreme Court.
               </p>
               <div className="d-flex flex-wrap gap-3">
@@ -166,7 +166,7 @@ const Careers = () => {
       <section className="careers-section container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow text-uppercase mb-2">Life at De Jure</p>
+            <p className="eyebrow text-uppercase mb-2">Life at DeJure</p>
             <h2>Where high-stakes work meets mentorship</h2>
           </div>
           <p className="heading-copy">

@@ -4,22 +4,22 @@ import { Helmet } from "react-helmet";
 const Info = () => (
   <div className="info">
     <Helmet>
-      <title>About Us | De Jure Advocates & Legal Consultants</title>
+      <title>About Us | DeJure Advocates & Legal Consultants</title>
       <meta
         name="description"
-        content="Learn about De Jure Advocates & Legal Consultants' mission, values, leadership approach, and how we partner with clients."
+        content="Learn about DeJure Advocates & Legal Consultants' mission, values, leadership approach, and how we partner with clients."
       />
     </Helmet>
     <div>
       <h6 className="guide-text ms-3 mt-4">
-        ABOUT DE JURE ADVOCATES & LEGAL CONSULTANTS
+        ABOUT DEJURE ADVOCATES & LEGAL CONSULTANTS
       </h6>
       <div className="container py-5">
         <div className="row g-5 align-items-center">
           <div className="col-lg-6">
             <h5 className="fw-bold pb-3">Mission & Values</h5>
             <p>
-              De Jure Advocates & Legal Consultants was created to bring
+              DeJure Advocates & Legal Consultants was created to bring
               efficiency, customer centrality, and technical excellence to
               business law practice. We partner with quality-conscious
               organizations, protecting their vital interests through
@@ -36,7 +36,7 @@ const Info = () => (
             <img
               src="/assets/about-us.webp"
               className="img-fluid rounded-2"
-              alt="De Jure Advocates & Legal Consultants team collaborating"
+              alt="DeJure Advocates & Legal Consultants team collaborating"
             />
           </div>
         </div>
@@ -53,7 +53,7 @@ const Info = () => (
             </p>
             <p>
               Whether supporting a cross-border transaction or guiding a
-              regulator on policy reform, De Jure Advocates & Legal Consultants
+              regulator on policy reform, DeJure Advocates & Legal Consultants
               delivers proactive and timely counsel that helps clients lead with
               confidence.
             </p>
@@ -97,7 +97,7 @@ const Info = () => (
               <div className="card-body p-4">
                 <h5 className="fw-bold pb-3">Our Promise</h5>
                 <p>
-                  De Jure Advocates & Legal Consultants is committed to
+                  DeJure Advocates & Legal Consultants is committed to
                   delivering cost-effective and time-efficient services without
                   compromising depth. We keep communication transparent, ensure
                   senior attention on every matter, and stay ahead of regulatory

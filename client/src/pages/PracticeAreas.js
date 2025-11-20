@@ -51,7 +51,7 @@ const focusSections = [
     id: "arbitration",
     label: "Arbitration",
     lead:
-      "De Jure Advocates & Legal Consultants maintains a dedicated arbitration desk led by Harvard-trained counsel Hassan Kamran Bashir alongside Aitzaz Aslam.",
+      "DeJure Advocates & Legal Consultants maintains a dedicated arbitration desk led by Harvard-trained counsel Hassan Kamran Bashir alongside Aitzaz Aslam.",
     summary:
       "We craft bespoke procedures, seat strategies, and enforcement plans so commercial parties resolve disputes faster than traditional litigation allows.",
     bullets: [
@@ -153,12 +153,12 @@ const PracticeAreas = ({ focusTarget }) => {
     <div className="expertise-page" id="practice-areas">
       <Helmet>
         <title>
-          Core Strengths & Practice Areas | De Jure Advocates & Legal
+          Core Strengths & Practice Areas | DeJure Advocates & Legal
           Consultants
         </title>
         <meta
           name="description"
-          content="Explore De Jure Advocates & Legal Consultants' core strengths and practice areas spanning taxation, disputes, banking, trade, arbitration, and policy advisory."
+          content="Explore DeJure Advocates & Legal Consultants' core strengths and practice areas spanning taxation, disputes, banking, trade, arbitration, and policy advisory."
         />
       </Helmet>
 

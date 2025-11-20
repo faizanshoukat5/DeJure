@@ -23,13 +23,13 @@ const Footer = () => {
               <img
                 src="/assets/logo-dejure-maroon.svg"
                 className="img-fluid logo-image"
-                alt="De Jure Advocates & Legal Consultants logo"
+                alt="DeJure Advocates & Legal Consultants logo"
                 style={{ height: '70px', width: 'auto', maxWidth: '480px' }}
                 loading="eager"
                 fetchpriority="high"
               />
               <p className="content pt-3">
-                De Jure Advocates & Legal Consultants pairs courtroom insight
+                DeJure Advocates & Legal Consultants pairs courtroom insight
                 with strategic advisory work across Pakistan. We maintain
                 dedicated teams in Islamabad and Lahore to support complex
                 mandates for businesses, investors, and public institutions.
@@ -170,7 +170,7 @@ const Footer = () => {
             headerIcon="/assets/logo-dejure-maroon.svg"
             headerTxtColor="white"
             headerBgColor="#550909"
-            headerTitle="De Jure Advocates & Legal Consultants"
+            headerTitle="DeJure Advocates & Legal Consultants"
             headerCaption="Typically replies in minutes"
             bodyBgColor="#bbb"
             chatPersonName="Support"
@@ -191,7 +191,7 @@ const Footer = () => {
           <div className="bg-dark d-flex align-items-center justify-content-center">
             <hr></hr>
             <p className="copyright mb-0">
-              ©2025 De Jure Advocates & Legal Consultants. All rights
+              ©2025 DeJure Advocates & Legal Consultants. All rights
               reserved.
             </p>
           </div>

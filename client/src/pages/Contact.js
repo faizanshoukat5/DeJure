@@ -80,10 +80,10 @@ export const Contact = () => {
   return (
     <div className="contact-page">
       <Helmet>
-        <title>Request a Consultation | De Jure Advocates & Legal Consultants</title>
+        <title>Request a Consultation | DeJure Advocates & Legal Consultants</title>
         <meta
           name="description"
-          content="Request a consultation with De Jure's Islamabad and Lahore partners for tax, corporate, restructuring, and dispute matters."
+          content="Request a consultation with DeJure's Islamabad and Lahore partners for tax, corporate, restructuring, and dispute matters."
         />
       </Helmet>
 
@@ -95,7 +95,7 @@ export const Contact = () => {
               <p className="eyebrow text-uppercase mb-2">Request a consultation</p>
               <h1>Brief our partners and receive a plan within 48 hours</h1>
               <p className="lead">
-                De Jure pairs Supreme Court advocates, tax strategists, and corporate advisors across Islamabad and Lahore. Share your
+                DeJure pairs Supreme Court advocates, tax strategists, and corporate advisors across Islamabad and Lahore. Share your
                 objectives—the team will align courtroom and boardroom tactics quickly.
               </p>
               <div className="d-flex flex-wrap gap-3">

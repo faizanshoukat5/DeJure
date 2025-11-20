@@ -69,10 +69,10 @@ const OurTeam = () => {
   return (
     <div className="page our-team">
       <Helmet>
-        <title>Our Team | De Jure Advocates & Legal Consultants</title>
+        <title>Our Team | DeJure Advocates & Legal Consultants</title>
         <meta
           name="description"
-          content="Explore the multidisciplinary lawyers leading De Jure Advocates & Legal Consultants across corporate, tax, restructuring, and dispute mandates."
+          content="Explore the multidisciplinary lawyers leading DeJure Advocates & Legal Consultants across corporate, tax, restructuring, and dispute mandates."
         />
       </Helmet>
 
@@ -88,7 +88,7 @@ const OurTeam = () => {
           <div className="row">
             <div className="col-lg-7 col-xl-6">
               <div className="team-hero-panel">
-                <p className="team-hero-eyebrow text-uppercase mb-3">De Jure Advocates & Legal Consultants</p>
+                <p className="team-hero-eyebrow text-uppercase mb-3">DeJure Advocates & Legal Consultants</p>
                 <h1 className="team-hero-title">A litigation-first firm with boardroom instincts</h1>
                 <p className="team-hero-copy">
                   We pair Supreme Court advocates, barristers, and sector specialists to defend your position at every
