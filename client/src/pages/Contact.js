@@ -223,7 +223,7 @@ export const Contact = () => {
             <div className="col-md-6">
               <div className="map-embed shadow-sm">
                 <iframe
-                  src="https://www.google.com/maps?q=36-C+FCC,+Gulberg+IV,+Lahore,+Pakistan&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3402.2842857142857!2d74.3360634!3d31.5244617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDMxJzI4LjEiTiA3NMKwMjAnMTkuMSJF!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
                   title="DeJure Lahore Office on Google Maps"
                   loading="lazy"
                   allowFullScreen

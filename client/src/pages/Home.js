@@ -180,7 +180,7 @@ const Home = () => {
                         matters on track.
                       </p>
                       <div className="py-3 text-center">
-                        <Link to="/practice-areas">
+                        <Link to="/practice-areas#practice-area-list">
                           <button
                             type="button"
                             className="btn btn-outline-dark mb-4"

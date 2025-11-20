@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
 * {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5rem;
@@ -1164,7 +1166,13 @@ footer .bg-dark {
   margin-left: 3rem;
 }
 
-.text-1,
+.text-1 {
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
 .text-2 {
   color: #fff;
   font-family: "Marmelad", sans-serif;
