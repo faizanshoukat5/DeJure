@@ -47,13 +47,7 @@ const developmentTracks = [
 
 ];
 
-const benefits = [
-  "Performance-linked bonuses and matter-origin credits",
-  "Hybrid work windows tied to filing cycles",
-  "Annual CLE stipend for global certifications",
-  "Wellbeing allowance covering counseling or fitness",
-  "Knowledge sabbaticals to pursue academic research",
-];
+
 
 const faqs = [
   {
