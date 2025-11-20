@@ -2,28 +2,50 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import people from "../data/people.json";
 
-const ImageWithPlaceholder = ({ src, alt, className = "" }) => {
+const getInitials = (name = "") => {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return "DJ";
+  const first = parts[0][0] || "";
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : parts[0][1] || "";
+  return `${first}${last}`.toUpperCase();
+};
+
+const StylizedPlaceholder = ({ name }) => (
+  <div
+    className="team-member-placeholder stylized-placeholder"
+    role="img"
+    aria-label={`${name || "DeJure team member"} portrait placeholder`}
+  >
+    <span>{getInitials(name)}</span>
+  </div>
+);
+
+const ImageWithPlaceholder = ({ src, alt, name, className = "" }) => {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
+  const shouldUseStylized = !src || src.includes("LOGO2") || errored;
 
   return (
     <div className={`team-member-image-wrapper ${className}`}>
-      {!loaded || errored ? <div className="team-member-placeholder" aria-hidden="true" /> : null}
-      <img
-        src={src}
-        alt={alt}
-        className="team-member-image"
-        loading="lazy"
-        style={{ display: loaded && !errored ? "block" : "none" }}
-        onLoad={() => {
-          setLoaded(true);
-          setErrored(false);
-        }}
-        onError={(e) => {
-          setErrored(true);
-          if (e?.target) e.target.src = "/assets/LOGO2.png";
-        }}
-      />
+      {shouldUseStylized ? (
+        <StylizedPlaceholder name={name || alt} />
+      ) : (
+        <>
+          {!loaded && <div className="team-member-placeholder" aria-hidden="true" />}
+          <img
+            src={src}
+            alt={alt}
+            className="team-member-image"
+            loading="lazy"
+            style={{ display: loaded ? "block" : "none" }}
+            onLoad={() => {
+              setLoaded(true);
+              setErrored(false);
+            }}
+            onError={() => setErrored(true)}
+          />
+        </>
+      )}
     </div>
   );
 };
@@ -149,6 +171,7 @@ const OurTeam = () => {
                     <ImageWithPlaceholder
                       src={leader.image}
                       alt={leader.name}
+                      name={leader.name}
                       className="leadership-feature-image"
                     />
                     <div className="leadership-feature-body">
@@ -193,7 +216,12 @@ const OurTeam = () => {
             {broaderTeam.map((member) => (
               <div className="col-lg-6" key={member.name}>
                 <div className={`team-grid-card ${expandedBio === member.name ? "expanded" : ""}`}>
-                  <ImageWithPlaceholder src={member.image} alt={member.name} className="grid-image" />
+                  <ImageWithPlaceholder
+                    src={member.image}
+                    alt={member.name}
+                    name={member.name}
+                    className="grid-image"
+                  />
                   <div className="team-grid-card-body">
                     <div className="role-label">{member.title}</div>
                     <h4>{member.name}</h4>

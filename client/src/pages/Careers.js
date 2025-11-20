@@ -1,37 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const openRoles = [
-  {
-    title: "Senior Associate — Tax & Corporate",
-    location: "Islamabad or Lahore",
-    type: "Full-time",
-    practice: "Tax Controversy, Structuring",
-    summary: "Lead mandates that span tax litigation, cross-border structuring, and CFO-facing advisory engagements.",
-  },
-  {
-    title: "Associate — Regulatory Affairs",
-    location: "Islamabad",
-    type: "Full-time",
-    practice: "Regulatory & Policy",
-    summary: "Shape submissions before SECP, OGRA, and provincial authorities with guidance from senior partners.",
-  },
-  {
-    title: "Litigation Counsel",
-    location: "Lahore",
-    type: "Full-time",
-    practice: "Civil & Criminal",
-    summary: "Own filings, evidence prep, and courtroom strategy alongside Supreme Court advocates.",
-  },
-  {
-    title: "Research & Policy Fellow",
-    location: "Remote / Islamabad",
-    type: "6-month fellowship",
-    practice: "Think-tank desk",
-    summary: "Support comparative law projects, knowledge assets, and playbooks for active client mandates.",
-  },
-];
-
 const experienceValues = [
   {
     title: "Rigorous matters",
@@ -179,40 +148,6 @@ const Careers = () => {
               <div className="careers-value-card">
                 <h5>{value.title}</h5>
                 <p>{value.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="careers-section container" id="open-roles">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow text-uppercase mb-2">Open Roles</p>
-            <h2>Now interviewing</h2>
-          </div>
-          <p className="heading-copy">
-            We review applications throughout the year. Mention your earliest availability and preferred office.
-          </p>
-        </div>
-        <div className="row g-4">
-          {openRoles.map((role) => (
-            <div className="col-lg-6" key={role.title}>
-              <div className="careers-role-card">
-                <div className="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                  <div>
-                    <h4>{role.title}</h4>
-                    <p className="role-practice">{role.practice}</p>
-                  </div>
-                  <div className="text-end careers-role-meta">
-                    <span>{role.location}</span>
-                    <span>{role.type}</span>
-                  </div>
-                </div>
-                <p className="mb-3 text-muted">{role.summary}</p>
-                <a className="text-link" href="mailto:careers@dejure.pk?subject=Careers%20Application">
-                  Share profile →
-                </a>
               </div>
             </div>
           ))}

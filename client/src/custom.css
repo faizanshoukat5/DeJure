@@ -1447,6 +1447,18 @@ footer .bg-dark {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
+.team-member-placeholder.stylized-placeholder {
+  width: 100%;
+  max-width: none;
+  background-image: none;
+  background: linear-gradient(135deg, #2b0e0e, #5d1a1a);
+  color: #f2e9dc;
+  font-size: clamp(1.75rem, 4vw, 2.85rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .team-member-body .subtitle {
   color: var(--color-accent);
   font-size: 1.05rem;
