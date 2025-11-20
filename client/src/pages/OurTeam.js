@@ -36,7 +36,6 @@ const ImageWithPlaceholder = ({ src, alt, name, className = "" }) => {
             src={src}
             alt={alt}
             className="team-member-image"
-            loading="lazy"
             style={{ display: loaded ? "block" : "none" }}
             onLoad={() => {
               setLoaded(true);
