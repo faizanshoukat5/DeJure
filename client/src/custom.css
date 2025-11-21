@@ -458,6 +458,25 @@ a.nav-cta.btn:focus,
   align-items: center;
 }
 
+/* Move hero image up so it sits beside the navbar and removes the white gap above */
+.clientele-hero {
+  margin-top: -86px; /* pulls the hero up under the navbar */
+}
+
+/* Compensate so the text remains readable (not hidden under navbar) */
+.clientele-hero-content {
+  padding-top: calc(4rem + 86px);
+}
+
+@media (max-width: 991.98px) {
+  .clientele-hero {
+    margin-top: -64px;
+  }
+  .clientele-hero-content {
+    padding-top: calc(2.5rem + 64px);
+  }
+}
+
 /* `.clientele-hero.bg-image` is not required - background is handled inline from component */
 
 .clientele-hero-overlay {
