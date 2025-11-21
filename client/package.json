@@ -36,6 +36,7 @@
     "eject": "react-scripts eject",
     "fetch:people": "node scripts/fetch-people.js",
     "download:images": "node scripts/download-team-images.js"
+    ,"image:optimize": "node scripts/optimize-images.js"
   },
   "eslintConfig": {
     "extends": [
