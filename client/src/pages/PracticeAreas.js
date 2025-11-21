@@ -4,20 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const focusSections = [
   {
-    id: "civil-criminal",
-    label: "Civil & Criminal",
-    lead:
-      "Ch. Muhammad Ali ASC leads our civil and criminal practice with more than two decades of trial and appellate experience across Pakistan.",
-    summary:
-      "We guide clients through investigations, urgent relief, and long-running litigation with disciplined preparation and relentless follow-through so every matter keeps momentum.",
-    bullets: [
-      "Representation from trial courts and tribunals to the Supreme Court",
-      "Rapid response on arrests, injunctions, and white-collar investigations",
-      "Matter strategies focused on due diligence, timelines, and measurable outcomes",
-    ],
-    image: "/assets/civil-criminal.jpg",
-  },
-  {
     id: "taxation",
     label: "Taxation & Corporate",
     lead:
@@ -31,35 +17,6 @@ const focusSections = [
     ],
     image:
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "banking",
-    label: "Banking & Finance",
-    lead:
-      "We advise banks, DFIs, modarabas, and fintech lenders on documentation, security perfection, and recovery across complex portfolios.",
-    summary:
-      "Our team drafts and negotiates every layer of finance documentation, vets collateral, and conducts contentious recoveries so institutions can deploy capital with confidence.",
-    bullets: [
-      "Facility, security, and intercreditor documentation tailored to each product",
-      "Collateral validation with complete title and revenue-record sweeps",
-      "Demand notices, negotiations, and litigation under banking recovery regimes",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "arbitration",
-    label: "Arbitration",
-    lead:
-      "DeJure Advocates & Legal Consultants maintains a dedicated arbitration desk led by Harvard-trained counsel Hassan Kamran Bashir alongside Aitzaz Aslam.",
-    summary:
-      "We craft bespoke procedures, seat strategies, and enforcement plans so commercial parties resolve disputes faster than traditional litigation allows.",
-    bullets: [
-      "Institutional and ad-hoc mandates across infrastructure, energy, and joint ventures",
-      "Panel of former judges and subject-matter experts to serve as neutrals or co-counsel",
-      "Award enforcement, challenge proceedings, and ADR program design",
-    ],
-    image: "/assets/arbitration.jpg",
   },
   {
     id: "trade",
@@ -89,6 +46,49 @@ const focusSections = [
       "Mergers, acquisitions, joint ventures, and regulatory compliance",
     ],
     image: "/assets/business-law.jpg",
+  },
+  {
+    id: "civil-criminal",
+    label: "Civil & Criminal",
+    lead:
+      "Ch. Muhammad Ali ASC leads our civil and criminal practice with more than two decades of trial and appellate experience across Pakistan.",
+    summary:
+      "We guide clients through investigations, urgent relief, and long-running litigation with disciplined preparation and relentless follow-through so every matter keeps momentum.",
+    bullets: [
+      "Representation from trial courts and tribunals to the Supreme Court",
+      "Rapid response on arrests, injunctions, and white-collar investigations",
+      "Matter strategies focused on due diligence, timelines, and measurable outcomes",
+    ],
+    image: "/assets/civil-criminal.jpg",
+  },
+  {
+    id: "arbitration",
+    label: "Arbitration",
+    lead:
+      "DeJure Advocates & Legal Consultants maintains a dedicated arbitration desk led by Harvard-trained counsel Hassan Kamran Bashir alongside Aitzaz Aslam.",
+    summary:
+      "We craft bespoke procedures, seat strategies, and enforcement plans so commercial parties resolve disputes faster than traditional litigation allows.",
+    bullets: [
+      "Institutional and ad-hoc mandates across infrastructure, energy, and joint ventures",
+      "Panel of former judges and subject-matter experts to serve as neutrals or co-counsel",
+      "Award enforcement, challenge proceedings, and ADR program design",
+    ],
+    image: "/assets/arbitration.jpg",
+  },
+  {
+    id: "banking",
+    label: "Banking & Finance",
+    lead:
+      "We advise banks, DFIs, modarabas, and fintech lenders on documentation, security perfection, and recovery across complex portfolios.",
+    summary:
+      "Our team drafts and negotiates every layer of finance documentation, vets collateral, and conducts contentious recoveries so institutions can deploy capital with confidence.",
+    bullets: [
+      "Facility, security, and intercreditor documentation tailored to each product",
+      "Collateral validation with complete title and revenue-record sweeps",
+      "Demand notices, negotiations, and litigation under banking recovery regimes",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 

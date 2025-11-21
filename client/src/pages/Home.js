@@ -27,7 +27,8 @@ const Home = () => {
               <div className="hero-overlay"></div>
               <div className="text-container d-flex flex-column justify-content-start align-items-start pt-6 slide">
                 <div className="text-1 fs-2 pb-3">
-                  DeJure ADVOCATES & LEGAL CONSULTANTS
+                  <span className="dejure-word">DeJure</span>
+                  <span className="subhead">ADVOCATES &amp; LEGAL CONSULTANTS</span>
                 </div>
                 <div className="text-2 fs-4">
                   CORPORATE LAW. TAX STRATEGY. REGULATORY INSIGHT.

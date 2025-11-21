@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Careers from "./pages/Careers";
 import OurTeam from "./pages/OurTeam";
 import Achievements from "./pages/Achievements";
+import Clientele from "./pages/Clientele";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ErrorPage from "./pages/ErrorPage";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/people" element={<OurTeam />} />
+            <Route path="/clientele" element={<Clientele />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<ErrorPage />} />

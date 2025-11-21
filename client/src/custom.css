@@ -399,6 +399,100 @@ a.nav-cta.btn:focus,
   margin: 0;
 }
 
+/* Clientele page */
+.clientele-page {
+  background-color: var(--color-neutral-100);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.clientele-heading {
+  font-family: "Cinzel", "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(2.1rem, 3vw, 2.6rem);
+  color: var(--color-primary);
+  margin-top: 0.5rem;
+}
+
+.clientele-lead {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-top: 1.25rem;
+}
+
+.client-list .client-card {
+  background-color: var(--color-surface);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(var(--color-black-rgb), 0.06);
+  padding: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-base);
+  box-shadow: 0 8px 20px rgba(var(--color-black-rgb), 0.06);
+  min-height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-list .client-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(var(--color-black-rgb), 0.09);
+}
+
+@media (max-width: 575.98px) {
+  .clientele-page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .clientele-lead {
+    font-size: 1rem;
+  }
+}
+
+/* Clientele hero */
+.clientele-hero {
+  position: relative;
+  /* background-image must be applied at runtime via inline style so build doesn't try to resolve the path */
+  background-size: cover;
+  background-position: center;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+}
+
+/* `.clientele-hero.bg-image` is not required - background is handled inline from component */
+
+.clientele-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,5,5,0.45), rgba(5,5,5,0.35));
+  z-index: 1;
+}
+
+.clientele-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 1rem;
+}
+
+.clientele-hero .clientele-heading {
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+}
+
+.clientele-hero .clientele-lead {
+  color: rgba(255,255,255,0.9);
+  max-width: 60rem;
+  font-size: 1.05rem;
+}
+
+/* gently tighten client cards spacing for this page */
+.client-list .client-card {
+  padding: 1rem;
+  font-size: 0.98rem;
+}
+
 .navbar .dropdown-menu {
   background: var(--color-primary);
   border-radius: 0.45rem;
@@ -1173,9 +1267,43 @@ footer .bg-dark {
   font-weight: 700;
 }
 
+/* Emphasize the 'DeJure' word in the hero heading */
+.text-1 .dejure-word {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 1.12em; /* slightly larger than surrounding heading */
+  letter-spacing: 0.125rem;
+  color: #fff;
+  margin-right: 0.35rem;
+}
+
+@media (max-width: 767.98px) {
+  .text-1 .dejure-word {
+    font-size: 1.05em;
+  }
+}
+
+/* Slightly reduce size of the 'ADVOCATES & LEGAL CONSULTANTS' subheading */
+.text-1 .subhead {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.82em; /* reduced a bit more */
+  letter-spacing: 0.06rem;
+  color: #ffffff;
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 767.98px) {
+  .text-1 .subhead {
+    font-size: 0.88em; /* mobile slightly larger for readability */
+  }
+}
+
 .text-2 {
   color: #fff;
-  font-family: "Marmelad", sans-serif;
+  font-family: 'Cinzel', serif;
   letter-spacing: 0.1rem;
 }
 
@@ -1188,12 +1316,33 @@ footer .bg-dark {
   font-size: 1.3rem;
 }
 
+/* Ensure the location line uses Cinzel as requested */
+.text-2 span,
+.text-2 .fw-bold {
+  font-family: 'Cinzel', serif;
+}
+
 .text-3 {
   color: #ebe2d6ff;
   font-size: 0.9rem;
   padding-top: 3rem;
   line-height: 1.8rem;
   width: 60%;
+}
+
+/* Ensure the hero uses Cinzel for all visible banner text except the quoted line */
+.hero-section .text-container {
+  font-family: 'Cinzel', serif;
+}
+
+.text-3 {
+  /* keep the quoted line on the default sans-serif (Open Sans) */
+  font-family: "Open Sans", sans-serif;
+}
+
+.hero-section .horizontal-btn .btn,
+.hero-section .mobile-btn .btn {
+  font-family: 'Cinzel', serif;
 }
 
 .text-3 span {

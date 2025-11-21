@@ -210,6 +210,19 @@ const Navbar = () => {
                     Our Team
                   </NavLink>
                 </li>
+                <li className="nav-item mx-3 mb-2">
+                  <NavLink
+                    to="/clientele"
+                    style={({ isActive }) => ({
+                      textDecoration: "none",
+                      color: isActive ? "#c2b697" : "#fff",
+                      borderBottom: isActive ? "1px solid #c2b697" : "none",
+                      paddingBottom: isActive ? "5px" : "0",
+                    })}
+                  >
+                    Clientele
+                  </NavLink>
+                </li>
                 <li className="nav-item mx-3 mb-2 d-md-none">
                   <NavLink
                     to="/contact"
