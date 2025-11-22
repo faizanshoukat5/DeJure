@@ -1,13 +1,18 @@
 {
+  "name": "dejurepp",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "recolor-logo": "node scripts/recolor-logo-background.mjs",
+    "generate-favicons": "node scripts/generate-favicons.mjs"
+  },
   "dependencies": {
+    "express": "^4.18.2",
     "firebase": "^12.6.0"
   },
   "devDependencies": {
     "jimp": "^0.22.10",
     "sharp": "^0.33.4"
-  },
-  "scripts": {
-    "recolor-logo": "node scripts/recolor-logo-background.mjs",
-    "generate-favicons": "node scripts/generate-favicons.mjs"
   }
 }
