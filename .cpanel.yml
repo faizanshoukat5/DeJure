@@ -6,9 +6,12 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/faizansha/dejurepp
-    - /bin/cp -R app.js $DEPLOYPATH
-    - /bin/cp -R package.json $DEPLOYPATH
-    - /bin/cp -R client/build $DEPLOYPATH
+    - /bin/cp app.js $DEPLOYPATH/
+    - /bin/cp package.json $DEPLOYPATH/
+    - /bin/cp package-lock.json $DEPLOYPATH/ 2>/dev/null || true
+    - cd /home/faizansha/repositories/DeJure2.0/client && /usr/bin/npm install --production=false
+    - cd /home/faizansha/repositories/DeJure2.0/client && /usr/bin/npm run build
+    - /bin/cp -R /home/faizansha/repositories/DeJure2.0/client/build $DEPLOYPATH/
 
 # Notes:
 # - Replace <CPANEL_USERNAME> with the account username (e.g. "user123").
