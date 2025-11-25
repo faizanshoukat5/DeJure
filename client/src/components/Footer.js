@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
@@ -20,14 +21,16 @@ const Footer = () => {
         <div className="container py-5">
           <div className="row g-4 align-items-start">
             <div className="col-lg-4 text-center text-lg-start">
-              <img
-                src="/assets/logo-dejure-maroon.svg"
-                className="img-fluid logo-image"
-                alt="DeJure Advocates & Legal Consultants logo"
-                style={{ height: '70px', width: 'auto', maxWidth: '480px' }}
-                loading="eager"
-                fetchpriority="high"
-              />
+              <Link to="/" className="d-inline-block">
+                <img
+                  src="/assets/logo-dejure-maroon.svg"
+                  className="img-fluid logo-image"
+                  alt="DeJure Advocates & Legal Consultants logo"
+                  style={{ height: '70px', width: 'auto', maxWidth: '480px' }}
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </Link>
               <p className="content pt-3">
                 DeJure Advocates & Legal Consultants pairs courtroom insight
                 with strategic advisory work across Pakistan. We maintain

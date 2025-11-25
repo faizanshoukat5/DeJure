@@ -1,0 +1,18 @@
+# cPanel deployment configuration
+# IMPORTANT: Replace <CPANEL_USERNAME> with your actual cPanel username before committing.
+# This file instructs cPanel's Git Version Control to export the repository to the
+# production directory when you push to the cPanel-managed repository.
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/faizansha/dejurepp
+    - /bin/cp -R app.js $DEPLOYPATH
+    - /bin/cp -R package.json $DEPLOYPATH
+    - /bin/cp -R client/build $DEPLOYPATH
+
+# Notes:
+# - Replace <CPANEL_USERNAME> with the account username (e.g. "user123").
+# - After pushing to the cPanel-managed repository cPanel will run this export.
+# - Use cPanel's Node.js Application Manager to run `npm install` and restart the app.
+# - If you want cPanel to also run post-deploy commands (like `npm install`), edit the
+#   destination folder in cPanel and run `npm install` through the UI or via the terminal.
