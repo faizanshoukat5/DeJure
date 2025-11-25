@@ -9,9 +9,9 @@ deployment:
     - /bin/cp app.js $DEPLOYPATH/
     - /bin/cp package.json $DEPLOYPATH/
     - /bin/cp package-lock.json $DEPLOYPATH/ 2>/dev/null || true
-    - cd /home/faizansha/repositories/DeJure2.0/client && /usr/bin/npm install --production=false
-    - cd /home/faizansha/repositories/DeJure2.0/client && /usr/bin/npm run build
-    - /bin/cp -R /home/faizansha/repositories/DeJure2.0/client/build $DEPLOYPATH/
+    - cd /home/faizansha/repositories/DeJure-repo/client && /usr/bin/npm install --production=false
+    - cd /home/faizansha/repositories/DeJure-repo/client && /usr/bin/npm run build
+    - /bin/cp -R /home/faizansha/repositories/DeJure-repo/client/build $DEPLOYPATH/
 
 # Notes:
 # - Replace <CPANEL_USERNAME> with the account username (e.g. "user123").
